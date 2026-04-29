@@ -348,11 +348,11 @@
 
   .badge {
     font-family: var(--mono);
-    font-size: 10px;
-    color: #b2b2b2;
+    font-size: 11px;
+    color: #c4c4c4;
     background: var(--badge-bg);
-    border: 1px solid var(--badge-border);
-    padding: 2px 7px;
+    border: 1px solid #303030;
+    padding: 2px 8px;
     border-radius: 2px;
     letter-spacing: 0.2px;
   }
@@ -421,8 +421,8 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 9px;
-    align-items: baseline;
+    margin-bottom: 10px;
+    align-items: flex-start;
   }
 
   .skills-group-label {
@@ -432,6 +432,7 @@
     min-width: 112px;
     flex-shrink: 0;
     padding-top: 3px;
+    letter-spacing: 0.3px;
   }
 
   .skills-group .badges {
@@ -439,6 +440,14 @@
     flex-wrap: wrap;
     gap: 5px;
   }
+
+  /* Category label accent colors */
+  .sg-frameworks   .skills-group-label { color: #7fa8c8; }
+  .sg-languages    .skills-group-label { color: #a07fc8; }
+  .sg-architecture .skills-group-label { color: #7fc8a0; }
+  .sg-data         .skills-group-label { color: #c8a87f; }
+  .sg-native       .skills-group-label { color: #c88a7f; }
+  .sg-cicd         .skills-group-label { color: #a0a8c8; }
 
   /* Testimonials */
   .section-testimonials { margin-top: 32px; }
@@ -942,14 +951,14 @@
   <!-- SKILLS -->
   <section class="skills">
     <div class="skills-title">Tech Stack</div>
-    <div class="skills-group">
+    <div class="skills-group sg-frameworks">
       <span class="skills-group-label">Frameworks</span>
       <div class="badges">
         <span class="badge">Flutter</span>
         <span class="badge">React Native</span>
       </div>
     </div>
-    <div class="skills-group">
+    <div class="skills-group sg-languages">
       <span class="skills-group-label">Languages</span>
       <div class="badges">
         <span class="badge">Dart</span>
@@ -957,7 +966,7 @@
         <span class="badge">Java</span>
       </div>
     </div>
-    <div class="skills-group">
+    <div class="skills-group sg-architecture">
       <span class="skills-group-label">Architecture</span>
       <div class="badges">
         <span class="badge">Riverpod</span>
@@ -966,7 +975,7 @@
         <span class="badge">MVVM</span>
       </div>
     </div>
-    <div class="skills-group">
+    <div class="skills-group sg-data">
       <span class="skills-group-label">Data & Networking</span>
       <div class="badges">
         <span class="badge">Drift / SQLite</span>
@@ -975,7 +984,7 @@
         <span class="badge">Dio</span>
       </div>
     </div>
-    <div class="skills-group">
+    <div class="skills-group sg-native">
       <span class="skills-group-label">Native</span>
       <div class="badges">
         <span class="badge">iOS (AVFoundation)</span>
@@ -986,7 +995,7 @@
         <span class="badge">Widgets</span>
       </div>
     </div>
-    <div class="skills-group">
+    <div class="skills-group sg-cicd">
       <span class="skills-group-label">CI / CD & Tools</span>
       <div class="badges">
         <span class="badge">GitHub Actions</span>
