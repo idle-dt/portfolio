@@ -410,12 +410,12 @@
 
   .skills-title {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-dim);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    letter-spacing: 0.3px;
     margin-bottom: 16px;
   }
+  .skills-title .ps { color: var(--available); }
 
   /* Skills ASCII table */
   .skills-pre-wrap {
@@ -935,15 +935,16 @@
 
   <!-- SKILLS -->
   <section class="skills">
-    <div class="skills-title">Tech Stack</div>
+    <div class="skills-title"><span class="ps">$</span> tech-stack --list</div>
     <div class="skills-pre-wrap"><pre class="skills-pre">+--------------+------------------------------------------------------------------------+
-<span class="ln-primary">| flutter      | Widgets         Animation         Native Channel      State Management |</span>
-+--------------+------------------------------------------------------------------------+
-| languages    | <span class="val">Dart            Kotlin            Java                                </span> |
-| architecture | <span class="val">Riverpod        BLoC              Clean Architecture  MVVM            </span> |
-| data         | <span class="val">Drift/SQLite    REST              WebSockets                          </span> |
-| native       | <span class="val">Android SDK     In-App Purchases  Push Notifications  Deep Links      </span> |
-| ci/cd        | <span class="val">GitHub Actions  Codemagic         Bitrise             Git             </span> |
+| flutter      | <span class="val">Widgets         Animation      Native Channel      State Management   </span> |
+| languages    | <span class="val">Dart            Kotlin         Java                React Native       </span> |
+| architecture | <span class="val">Riverpod        BLoC           Clean Architecture  MVVM               </span> |
+| data         | <span class="val">Drift/SQLite    REST           WebSockets                             </span> |
+| native       | <span class="val">Android SDK     iOS            In-App Purchases    Push Notifications </span> |
+| firebase     | <span class="val">Crashlytics     Remote Config  Dynamic Links       Analytics          </span> |
+| ci/cd        | <span class="val">GitHub Actions  Codemagic      Bitrise             Git                </span> |
+| testing      | <span class="val">Flutter Test    Mockito        Widget Testing      Integration Testing</span> |
 +--------------+------------------------------------------------------------------------+</pre></div>
   </section>
 
