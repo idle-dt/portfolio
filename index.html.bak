@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denys Taranenko — Senior Flutter Engineer & Mobile Lead</title>
+
+<!-- SEO -->
+<meta name="description" content="Senior Flutter Engineer & Mobile Team Lead with 10+ years experience. Specialist in crypto wallets, white-label SaaS, and video streaming apps. Open to remote or EU relocation.">
+<meta name="keywords" content="Flutter Engineer, Mobile Team Lead, Dart, Riverpod, BLoC, Clean Architecture, remote, EU relocation">
+<meta name="author" content="Denys Taranenko">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Denys Taranenko — Senior Flutter Engineer">
+<meta property="og:description" content="10+ years building mobile products: crypto wallets, white-label SaaS, video streaming. Open to senior roles — remote or EU relocation.">
+<meta property="og:image" content="images/photo.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Denys Taranenko — Senior Flutter Engineer">
+<meta name="twitter:description" content="10+ years in Flutter/Mobile. Crypto wallets, white-label SaaS, video streaming. Open to remote or EU relocation.">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111;
+    --border: #2a2a2a;
+    --text: #d0d0d0;
+    --text-dim: #777;
+    --text-bright: #f0f0f0;
+    --accent: #8a8a8a;
+    --link: #a0a0a0;
+    --cta-bg: #1a1a1a;
+    --cta-border: #444;
+    --cta-text: #c8c8c8;
+    --available: #5a9a6a;
+    --badge-bg: #141414;
+    --badge-border: #2a2a2a;
+    --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--link); }
+  a:hover { color: var(--text-bright); }
+
+  .container {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 48px 24px 72px;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .header-photo {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 104px;
+    min-height: 130px;
+    display: flex;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    filter: grayscale(100%);
+    opacity: 0.82;
+    transition: opacity 0.2s;
+  }
+
+  .header-photo:hover { opacity: 1; }
+
+  .header-photo img {
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+    object-position: center 8%;
+    display: block;
+    min-height: 0;
+  }
+
+  .header-info { flex: 1; }
+
+  .header-info h1 {
+    color: var(--text-bright);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    letter-spacing: -0.3px;
+  }
+
+  .header-title {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.2px;
+    margin-bottom: 12px;
+  }
+
+  .status-line {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--available);
+    border: 1px solid #2a4a30;
+    background: #0d1f10;
+    padding: 3px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.3px;
+  }
+
+  .status-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--available);
+    animation: blink 2s infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .status-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  .header-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .header-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .header-links a:hover { color: var(--text-bright); }
+
+  .header-links .sep { color: var(--border); }
+
+  .btn-cv {
+    font-family: var(--mono) !important;
+    font-size: 11px !important;
+    color: var(--cta-text) !important;
+    background: var(--cta-bg);
+    border: 1px solid var(--cta-border) !important;
+    padding: 3px 12px;
+    border-radius: 2px;
+    text-decoration: none !important;
+    transition: border-color 0.15s, color 0.15s !important;
+  }
+
+  .btn-cv:hover {
+    color: var(--text-bright) !important;
+    border-color: var(--accent) !important;
+  }
+
+  /* About */
+  .about {
+    margin-bottom: 32px;
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .about-prompt {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+  }
+
+  .about-prompt .ps { color: var(--available); }
+
+  .about p {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .about p:last-child { margin-bottom: 0; }
+  .about strong { color: var(--text-bright); font-weight: 500; }
+
+  .about-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 12px;
+  }
+
+  .about-list li {
+    font-size: 14px;
+    color: var(--text);
+    padding: 3px 0 3px 14px;
+    position: relative;
+    line-height: 1.55;
+  }
+
+  .about-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--text-dim);
+  }
+
+  /* Section title */
+  .section-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    margin-top: 36px;
+  }
+
+  /* Project cards */
+  .project {
+    border: 1px solid var(--border);
+    padding: 22px 24px;
+    margin-bottom: 10px;
+    transition: border-color 0.15s;
+  }
+
+  .project:hover { border-color: #3a3a3a; }
+
+  .project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 1px;
+  }
+
+  .project-company {
+    color: var(--text-bright);
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .project-dates {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  .project-role {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.2px;
+    margin-bottom: 2px;
+  }
+
+  .project-agency {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    opacity: 0.65;
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  .project-oneliner {
+    color: var(--text);
+    font-size: 14px;
+    margin: 8px 0 12px;
+    line-height: 1.5;
+  }
+
+  .project-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 12px;
+  }
+
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    background: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    padding: 2px 7px;
+    border-radius: 2px;
+    letter-spacing: 0.2px;
+  }
+
+  .project-highlights {
+    list-style: none;
+    padding: 0;
+  }
+
+  .project-highlights li {
+    font-size: 13px;
+    color: var(--text);
+    padding: 3px 0 3px 14px;
+    position: relative;
+    line-height: 1.55;
+  }
+
+  .project-highlights li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--text-dim);
+  }
+
+  .project-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  .project-links a {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--link);
+    text-decoration: none;
+    border: 1px solid var(--badge-border);
+    padding: 3px 9px;
+    border-radius: 2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .project-links a:hover {
+    color: var(--text-bright);
+    border-color: var(--accent);
+  }
+
+  /* Skills */
+  .skills {
+    margin-top: 32px;
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .skills-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .skills-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 9px;
+    align-items: baseline;
+  }
+
+  .skills-group-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    min-width: 112px;
+    flex-shrink: 0;
+    padding-top: 3px;
+  }
+
+  .skills-group .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  /* Testimonials */
+  .section-testimonials { margin-top: 32px; }
+
+  .testimonials-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  .testimonial {
+    border: 1px solid var(--border);
+    padding: 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: border-color 0.15s;
+    background: var(--surface);
+  }
+
+  .testimonial:hover { border-color: #3a3a3a; }
+
+  .testimonial-quote {
+    font-size: 13px;
+    color: var(--text);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .testimonial-name {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-bright);
+  }
+
+  .testimonial-role {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  .testimonials-more {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  .testimonials-more a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--link);
+    text-decoration: none;
+    border: 1px solid var(--badge-border);
+    padding: 4px 12px;
+    border-radius: 2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .testimonials-more a:hover {
+    color: var(--text-bright);
+    border-color: var(--accent);
+  }
+
+  /* Education */
+  .section-education {
+    margin-top: 32px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+  }
+
+  .education-item {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .education-item-title {
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .education-item-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    flex-shrink: 0;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    padding: 24px 22px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-align: center;
+  }
+
+  .footer-prompt {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    word-break: break-all;
+  }
+
+  .footer-prompt .ps { color: var(--available); }
+
+  .footer p {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 18px;
+  }
+
+  .footer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .btn-primary {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--cta-text);
+    background: var(--cta-bg);
+    border: 1px solid var(--cta-border);
+    padding: 7px 16px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .btn-primary:hover {
+    color: var(--text-bright) !important;
+    border-color: var(--accent);
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: var(--link); }
+
+  /* Responsive */
+  @media (max-width: 540px) {
+    .container { padding: 28px 16px 48px; }
+    .header-inner { flex-direction: column; gap: 16px; align-items: flex-start; }
+    .header-photo { width: 80px; height: 110px; }
+    .project { padding: 16px 16px; }
+    .project-meta { flex-direction: column; gap: 2px; }
+    .testimonials-row { flex-direction: column; }
+    .skills-group { flex-direction: column; gap: 6px; }
+    .skills-group-label { min-width: unset; }
+    .education-item { flex-direction: column; gap: 2px; }
+    .header-info h1 { font-size: 20px; }
+    .footer-prompt { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-photo">
+        <img src="images/photo.jpg?v=3" alt="Denys Taranenko">
+      </div>
+      <div class="header-info">
+        <h1>Denys Taranenko</h1>
+        <div class="header-title">Senior Flutter Engineer · Mobile Team Lead · 10+ yrs</div>
+        <div class="status-line">
+          <span class="status-badge">
+            <span class="status-dot"></span>
+            Available now
+          </span>
+          <span class="status-meta">UTC+3 · Remote or EU relocation (NL / NO / SE)</span>
+        </div>
+        <div class="header-links">
+          <a href="mailto:taranenko.denis.serg@gmail.com">taranenko.denis.serg@gmail.com</a>
+          <span class="sep">·</span>
+          <a href="https://www.linkedin.com/in/denys-taranenko" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="sep">·</span>
+          <a href="https://github.com/idle-dt" target="_blank" rel="noopener">GitHub</a>
+          <span class="sep">·</span>
+          <a class="btn-cv" href="CV_Denys_Taranenko.pdf" download="CV_Denys_Taranenko.pdf" target="_blank" rel="noopener">↓ CV</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <div class="about">
+    <div class="about-prompt"><span class="ps">$</span> whoami</div>
+    <p>10+ years building mobile, mainly Flutter:</p>
+    <ul class="about-list">
+      <li>multi-chain crypto wallet spanning 13 blockchains</li>
+      <li>white-label SaaS platform behind hundreds of branded apps</li>
+      <li>multi-exchange trading aggregator</li>
+      <li>e-commerce app with limited-release drops and a few unusual features</li>
+    </ul>
+    <p>I've worked in big mobile orgs and led small teams inside them.</p>
+    <p>What I actually care about: code the next engineer can read without asking who wrote it, shipping things that don't become someone else's emergency three weeks later, and a team that works as a single mechanism.</p>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section-title">Experience</div>
+
+  <section class="project">
+    <div class="project-meta">
+      <span class="project-company">Ice Open Network</span>
+      <span class="project-dates">Nov 2024 – Apr 2026</span>
+    </div>
+    <div class="project-role">Senior Mobile Engineer</div>
+    <p class="project-oneliner">Cross-platform app — decentralized social network + multi-chain crypto wallet</p>
+    <div class="project-badges">
+      <span class="badge">Flutter</span>
+      <span class="badge">Dart</span>
+      <span class="badge">Riverpod</span>
+      <span class="badge">Freezed</span>
+      <span class="badge">Melos</span>
+      <span class="badge">Drift</span>
+      <span class="badge">React Native</span>
+    </div>
+    <ul class="project-highlights">
+      <li>Built multi-chain wallet supporting 13+ blockchains and 10+ token standards</li>
+      <li>Delivered swap/bridge engine integrating 4 providers with automatic fallback</li>
+      <li>Designed chain-agnostic send/receive pipeline covering gas, validator, and memo models</li>
+      <li>Contributed across 30+ feature modules in a Riverpod + Freezed + Melos monorepo</li>
+      <li>Participated in Flutter-to-React Native migration and native app improvements</li>
+      <li>Led a sub-team of 3 inside a 14-person mobile group</li>
+    </ul>
+    <div class="project-links">
+      <a href="https://ice.io/" target="_blank" rel="noopener">Website</a>
+      <a href="https://play.google.com/store/apps/details?id=io.ice.app" target="_blank" rel="noopener">Google Play</a>
+    </div>
+  </section>
+
+  <section class="project">
+    <div class="project-meta">
+      <span class="project-company">Uscreen</span>
+      <span class="project-dates">Jan 2022 – Sep 2024</span>
+    </div>
+    <div class="project-role">Senior Flutter Engineer</div>
+    <p class="project-oneliner">White-label Flutter platform powering branded apps for hundreds of video creators</p>
+    <div class="project-badges">
+      <span class="badge">Flutter</span>
+      <span class="badge">Dart</span>
+      <span class="badge">Clean Architecture</span>
+      <span class="badge">AVFoundation</span>
+      <span class="badge">In-App Purchases</span>
+    </div>
+    <ul class="project-highlights">
+      <li>Forked and extended native video_player (iOS AVFoundation + Android ExoPlayer) for deeper playback control</li>
+      <li>Designed and shipped Playlist feature end-to-end across a shared codebase powering many generated apps</li>
+      <li>Implemented native in-app purchase integrations powering subscriptions across all creator apps</li>
+      <li>Contributed to architecture and code-quality standards in a 6-person mobile team</li>
+      <li>Shipped across push notifications, local storage, and REST sync layers</li>
+    </ul>
+    <div class="project-links">
+      <a href="https://www.uscreen.tv/app-builder/" target="_blank" rel="noopener">Uscreen Platform</a>
+      <a href="https://apps.apple.com/us/app/jump-rope-dudes/id1578628767" target="_blank" rel="noopener">Example App (iOS)</a>
+      <a href="https://play.google.com/store/apps/details?id=ott.zendudefitness&hl=en" target="_blank" rel="noopener">Example App (Android)</a>
+    </div>
+  </section>
+
+  <section class="project">
+    <div class="project-meta">
+      <span class="project-company">BuyCrypt</span>
+      <span class="project-dates">Aug 2020 – Jan 2022</span>
+    </div>
+    <div class="project-role">Senior Flutter Engineer · Freelance</div>
+    <p class="project-oneliner">Multi-exchange crypto trading aggregator — Binance, Bybit, and more from one app</p>
+    <div class="project-badges">
+      <span class="badge">Flutter</span>
+      <span class="badge">Dart</span>
+      <span class="badge">BLoC</span>
+      <span class="badge">WebSockets</span>
+      <span class="badge">Codemagic</span>
+    </div>
+    <ul class="project-highlights">
+      <li>Led MVVM → BLoC architecture migration with full documentation and incremental rollout plan</li>
+      <li>Implemented live market data over WebSockets with reconnection and exponential backoff</li>
+      <li>Performance-tuned exchange layer for concurrent streams and order placement without UI blocking</li>
+      <li>Maintained CI/CD pipelines in Codemagic for automated iOS and Android builds</li>
+    </ul>
+    <div class="project-links">
+      <a href="https://buycrypt.com/en/" target="_blank" rel="noopener">Website</a>
+      <a href="https://apps.apple.com/ua/app/buycrypt-crypto-manager-app/id1498300634" target="_blank" rel="noopener">App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.quests.crypto_quest" target="_blank" rel="noopener">Google Play</a>
+    </div>
+  </section>
+
+  <section class="project">
+    <div class="project-meta">
+      <span class="project-company">Great Notion Brewing</span>
+      <span class="project-dates">Jul 2019 – Dec 2021</span>
+    </div>
+    <div class="project-role">Senior Flutter Engineer · Mobile Lead</div>
+    <div class="project-agency">via Windmill (agency)</div>
+    <p class="project-oneliner">Portland craft brewery app — limited-release drops, AR mini-games, native integrations</p>
+    <div class="project-badges">
+      <span class="badge">Flutter</span>
+      <span class="badge">Dart</span>
+      <span class="badge">MVVM</span>
+      <span class="badge">Unity AR</span>
+      <span class="badge">Bitrise</span>
+      <span class="badge">Deep Links</span>
+    </div>
+    <ul class="project-highlights">
+      <li>Designed app architecture from scratch; built the majority of features with pixel-perfect UI</li>
+      <li>Integrated Unity AR mini-games into Flutter across the Flutter–Unity–native bridge</li>
+      <li>Coordinated cross-team communication between Unity, mobile, backend, and product — ran demos and alignment calls</li>
+      <li>Native integrations: push alerts for beer drops, deep links, home-screen widgets (iOS + Android)</li>
+      <li>Set up and maintained CI/CD pipelines in Bitrise for automated builds and releases</li>
+      <li>Led mobile team in final year — sprint planning, code reviews, on-time delivery</li>
+    </ul>
+    <div class="project-links">
+      <a href="https://greatnotion.com/" target="_blank" rel="noopener">Website</a>
+      <a href="https://apps.apple.com/us/app/great-notion/id1490232622" target="_blank" rel="noopener">App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.great_notion" target="_blank" rel="noopener">Google Play</a>
+    </div>
+  </section>
+
+  <section class="project">
+    <div class="project-meta">
+      <span class="project-company">Hemi-Sync</span>
+      <span class="project-dates">Aug 2018 – Jul 2019</span>
+    </div>
+    <div class="project-role">Android Engineer</div>
+    <div class="project-agency">via Windmill (agency)</div>
+    <p class="project-oneliner">Audio-wellness app for guided meditation and binaural-audio programs</p>
+    <div class="project-badges">
+      <span class="badge">Kotlin</span>
+      <span class="badge">Android SDK</span>
+      <span class="badge">Audio Streaming</span>
+      <span class="badge">Push Notifications</span>
+      <span class="badge">REST API</span>
+    </div>
+    <ul class="project-highlights">
+      <li>Ongoing Android development on a live product: features, bug fixes, and quality improvements</li>
+      <li>Owned Android implementation end-to-end on smaller streams; partnered with tech lead on larger ones</li>
+      <li>Implemented push notifications displaying audio progress and playback controls</li>
+      <li>Subscription-gated audio streaming across a deep content catalog</li>
+    </ul>
+    <div class="project-links">
+      <a href="https://play.google.com/store/apps/details?id=com.hemisync.hemisyncflow" target="_blank" rel="noopener">Google Play</a>
+    </div>
+  </section>
+
+  <section class="project">
+    <div class="project-meta">
+      <span class="project-company">InfoArt</span>
+      <span class="project-dates">Oct 2017 – Jul 2018</span>
+    </div>
+    <div class="project-role">Android / Unity Engineer</div>
+    <p class="project-oneliner">Early-stage studio — casual children's games and lightweight Android apps</p>
+    <div class="project-badges">
+      <span class="badge">Java</span>
+      <span class="badge">Android SDK</span>
+      <span class="badge">Canvas</span>
+      <span class="badge">Unity</span>
+      <span class="badge">REST API</span>
+    </div>
+    <ul class="project-highlights">
+      <li>Native Android with custom Canvas-based rendering for game loops and animations</li>
+      <li>Pixel-perfect UI in close collaboration with a 3-person design team</li>
+      <li>Short Unity stint on a children's platformer; steady stream of small products under tight timelines</li>
+      <li>Where I learned to ship — fast iteration, tight collaboration, owning implementation end-to-end</li>
+    </ul>
+  </section>
+
+  <section class="project">
+    <div class="project-meta">
+      <span class="project-company">Healthcare Startup</span>
+      <span class="project-dates">Apr 2016 – Oct 2017</span>
+    </div>
+    <div class="project-role">Android Engineer · Freelance</div>
+    <p class="project-oneliner">Medication aggregator — search, reserve, and order from pharmacy chains in one app</p>
+    <div class="project-badges">
+      <span class="badge">Java</span>
+      <span class="badge">Android SDK</span>
+      <span class="badge">SQLite</span>
+      <span class="badge">Maps</span>
+      <span class="badge">REST API</span>
+    </div>
+    <ul class="project-highlights">
+      <li>Solo mobile developer — joined an existing codebase and owned it forward</li>
+      <li>Unified inconsistent responses from multiple pharmacy backends into a single data layer</li>
+      <li>Local SQLite cache for medication data — offline-first, reduced network round-trips</li>
+      <li>Pharmacy map with proximity calculation and routing to nearest stores</li>
+    </ul>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills">
+    <div class="skills-title">Tech Stack</div>
+    <div class="skills-group">
+      <span class="skills-group-label">Frameworks</span>
+      <div class="badges">
+        <span class="badge">Flutter</span>
+        <span class="badge">React Native</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <span class="skills-group-label">Languages</span>
+      <div class="badges">
+        <span class="badge">Dart</span>
+        <span class="badge">Kotlin</span>
+        <span class="badge">Java</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <span class="skills-group-label">Architecture</span>
+      <div class="badges">
+        <span class="badge">Riverpod</span>
+        <span class="badge">BLoC</span>
+        <span class="badge">Clean Architecture</span>
+        <span class="badge">MVVM</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <span class="skills-group-label">Data & Networking</span>
+      <div class="badges">
+        <span class="badge">Drift / SQLite</span>
+        <span class="badge">REST</span>
+        <span class="badge">WebSockets</span>
+        <span class="badge">Dio</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <span class="skills-group-label">Native</span>
+      <div class="badges">
+        <span class="badge">iOS (AVFoundation)</span>
+        <span class="badge">Android SDK</span>
+        <span class="badge">In-App Purchases</span>
+        <span class="badge">Push Notifications</span>
+        <span class="badge">Deep Links</span>
+        <span class="badge">Widgets</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <span class="skills-group-label">CI / CD & Tools</span>
+      <div class="badges">
+        <span class="badge">GitHub Actions</span>
+        <span class="badge">Fastlane</span>
+        <span class="badge">Codemagic</span>
+        <span class="badge">Bitrise</span>
+        <span class="badge">Melos</span>
+        <span class="badge">Git</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section class="section-testimonials">
+    <div class="section-title">Recommendations</div>
+    <div class="testimonials-row">
+      <a class="testimonial" href="https://www.linkedin.com/in/denys-taranenko/details/recommendations/" target="_blank" rel="noopener">
+        <div class="testimonial-quote">"Denys is 100% top-tier. His code is clean, his solutions are thoughtful, and he moves fast without cutting corners..."</div>
+        <div>
+          <div class="testimonial-name">Ivan Kolchev</div>
+          <div class="testimonial-role">Head of Mobile · Ice Open Network</div>
+        </div>
+      </a>
+      <a class="testimonial" href="https://www.linkedin.com/in/denys-taranenko/details/recommendations/" target="_blank" rel="noopener">
+        <div class="testimonial-quote">"Denys was one of the top developers on the team. Highly skilled technically, incredibly dependable..."</div>
+        <div>
+          <div class="testimonial-name">Yuliia Artemenko</div>
+          <div class="testimonial-role">Lead Product Owner · Ice Open Network</div>
+        </div>
+      </a>
+      <a class="testimonial" href="https://www.linkedin.com/in/denys-taranenko/details/recommendations/" target="_blank" rel="noopener">
+        <div class="testimonial-quote">"He didn't just implement designs — he actively engaged in discussions about usability, animations, and micro-interactions..."</div>
+        <div>
+          <div class="testimonial-name">Andrey Lykov</div>
+          <div class="testimonial-role">Product Designer · Ice Open Network</div>
+        </div>
+      </a>
+    </div>
+    <div class="testimonials-more">
+      <a href="https://www.linkedin.com/in/denys-taranenko/details/recommendations/" target="_blank" rel="noopener">All recommendations on LinkedIn →</a>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section-education">
+    <div class="section-title">Education & Speaking</div>
+    <div class="education-item">
+      <span class="education-item-title">Master's — Computer Science</span>
+      <span class="education-item-meta">National TU Dnipro Polytechnic · 2013–2018</span>
+    </div>
+    <div class="education-item">
+      <span class="education-item-title">Speaker — Kyiv Kotlin Night 2019</span>
+      <span class="education-item-meta">Talk: Flutter fundamentals for Android devs</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-prompt"><span class="ps">$</span> open-to-work --role "Senior Flutter / Mobile Lead" --type remote,eu-relocation --start immediately</div>
+    <p>Let's build something great. I'm available now.</p>
+    <div class="footer-actions">
+      <a class="btn-primary" href="mailto:taranenko.denis.serg@gmail.com">Send Email</a>
+      <a class="btn-primary" href="https://www.linkedin.com/in/denys-taranenko" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a class="btn-primary" href="CV_Denys_Taranenko.pdf" download="CV_Denys_Taranenko.pdf" target="_blank" rel="noopener">↓ Download CV</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/idle-dt" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
