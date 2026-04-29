@@ -62,7 +62,7 @@
     --surface: #111;
     --border: #2a2a2a;
     --text: #d0d0d0;
-    --text-dim: #777;
+    --text-dim: #909090;
     --text-bright: #f0f0f0;
     --accent: #8a8a8a;
     --link: #a0a0a0;
@@ -602,6 +602,56 @@
 
   .footer-links a:hover { color: var(--link); }
 
+  /* Scroll to top */
+  .scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: color 0.15s, border-color 0.15s, opacity 0.2s;
+    z-index: 100;
+  }
+  .scroll-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .scroll-top:hover {
+    color: var(--text-bright);
+    border-color: var(--accent);
+  }
+
+  /* Copy email */
+  .copy-email {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    background: none;
+    border: 1px solid var(--badge-border);
+    padding: 1px 6px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+    line-height: 1.4;
+    vertical-align: middle;
+  }
+  .copy-email:hover {
+    color: var(--text-bright);
+    border-color: var(--accent);
+  }
+  .copy-email.copied {
+    color: var(--available);
+    border-color: #2a4a30;
+  }
+
   /* Responsive */
   @media (max-width: 540px) {
     .container { padding: 28px 16px 48px; }
@@ -615,6 +665,39 @@
     .education-item { flex-direction: column; gap: 2px; }
     .header-info h1 { font-size: 20px; }
     .footer-prompt { font-size: 10px; }
+  }
+  /* Print */
+  @media print {
+    :root {
+      --bg: #fff;
+      --surface: #f8f8f8;
+      --border: #ddd;
+      --text: #222;
+      --text-dim: #666;
+      --text-bright: #000;
+      --link: #333;
+      --available: #2a6a30;
+      --badge-bg: #f5f5f5;
+      --badge-border: #ddd;
+    }
+
+    .scroll-top,
+    .copy-email,
+    .btn-cv,
+    .footer-actions,
+    .testimonials-more { display: none !important; }
+
+    .status-dot { animation: none !important; }
+
+    .container { padding: 12px 0; max-width: 100%; }
+
+    .project, .testimonial { break-inside: avoid; }
+
+    .testimonials-row { flex-direction: column; gap: 8px; }
+
+    .header-photo { opacity: 1 !important; }
+
+    a { color: #333 !important; text-decoration: none; }
   }
 </style>
 </head>
@@ -639,10 +722,13 @@
         </div>
         <div class="header-links">
           <a href="mailto:taranenko.denis.serg@gmail.com">taranenko.denis.serg@gmail.com</a>
+          <button class="copy-email" aria-label="Copy email address">copy</button>
           <span class="sep">·</span>
           <a href="https://www.linkedin.com/in/denys-taranenko-7912a9152/" target="_blank" rel="noopener">LinkedIn</a>
           <span class="sep">·</span>
           <a href="https://github.com/idle-dt" target="_blank" rel="noopener">GitHub</a>
+          <span class="sep">·</span>
+          <a href="https://t.me/infinity_uncertainty" target="_blank" rel="noopener">Telegram</a>
           <span class="sep">·</span>
           <a class="btn-cv" href="CV_Denys_Taranenko.pdf" target="_blank" rel="noopener">↓ CV</a>
         </div>
@@ -969,9 +1055,35 @@
     </div>
     <div class="footer-links">
       <a href="https://github.com/idle-dt" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://t.me/infinity_uncertainty" target="_blank" rel="noopener">Telegram</a>
     </div>
   </footer>
 
 </div>
+
+<button class="scroll-top" aria-label="Back to top">↑ top</button>
+
+<script>
+  // Scroll to top
+  const scrollBtn = document.querySelector('.scroll-top');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Copy email
+  document.querySelector('.copy-email').addEventListener('click', function () {
+    navigator.clipboard.writeText('taranenko.denis.serg@gmail.com').then(() => {
+      this.textContent = 'copied!';
+      this.classList.add('copied');
+      setTimeout(() => {
+        this.textContent = 'copy';
+        this.classList.remove('copied');
+      }, 2000);
+    });
+  });
+</script>
 </body>
 </html>
