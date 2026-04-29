@@ -417,37 +417,22 @@
     margin-bottom: 16px;
   }
 
-  .skills-group {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-    align-items: flex-start;
+  /* Skills ASCII table */
+  .skills-pre-wrap {
+    overflow-x: auto;
   }
 
-  .skills-group-label {
+  .skills-pre {
     font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    min-width: 112px;
-    flex-shrink: 0;
-    padding-top: 3px;
-    letter-spacing: 0.3px;
+    font-size: 12px;
+    color: var(--text-dim);   /* all structural chars (| + -) are dim */
+    line-height: 1.65;
+    white-space: pre;
+    margin: 0;
   }
 
-  .skills-group .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-
-  /* Category label accent colors */
-  .sg-frameworks   .skills-group-label { color: #7fa8c8; }
-  .sg-languages    .skills-group-label { color: #a07fc8; }
-  .sg-architecture .skills-group-label { color: #7fc8a0; }
-  .sg-data         .skills-group-label { color: #c8a87f; }
-  .sg-native       .skills-group-label { color: #c88a7f; }
-  .sg-cicd         .skills-group-label { color: #a0a8c8; }
+  .skills-pre .ln-primary { color: var(--text-bright); }
+  .skills-pre .val        { color: var(--text); }
 
   /* Testimonials */
   .section-testimonials { margin-top: 32px; }
@@ -951,61 +936,15 @@
   <!-- SKILLS -->
   <section class="skills">
     <div class="skills-title">Tech Stack</div>
-    <div class="skills-group sg-frameworks">
-      <span class="skills-group-label">Frameworks</span>
-      <div class="badges">
-        <span class="badge">Flutter</span>
-        <span class="badge">React Native</span>
-      </div>
-    </div>
-    <div class="skills-group sg-languages">
-      <span class="skills-group-label">Languages</span>
-      <div class="badges">
-        <span class="badge">Dart</span>
-        <span class="badge">Kotlin</span>
-        <span class="badge">Java</span>
-      </div>
-    </div>
-    <div class="skills-group sg-architecture">
-      <span class="skills-group-label">Architecture</span>
-      <div class="badges">
-        <span class="badge">Riverpod</span>
-        <span class="badge">BLoC</span>
-        <span class="badge">Clean Architecture</span>
-        <span class="badge">MVVM</span>
-      </div>
-    </div>
-    <div class="skills-group sg-data">
-      <span class="skills-group-label">Data & Networking</span>
-      <div class="badges">
-        <span class="badge">Drift / SQLite</span>
-        <span class="badge">REST</span>
-        <span class="badge">WebSockets</span>
-        <span class="badge">Dio</span>
-      </div>
-    </div>
-    <div class="skills-group sg-native">
-      <span class="skills-group-label">Native</span>
-      <div class="badges">
-        <span class="badge">iOS (AVFoundation)</span>
-        <span class="badge">Android SDK</span>
-        <span class="badge">In-App Purchases</span>
-        <span class="badge">Push Notifications</span>
-        <span class="badge">Deep Links</span>
-        <span class="badge">Widgets</span>
-      </div>
-    </div>
-    <div class="skills-group sg-cicd">
-      <span class="skills-group-label">CI / CD & Tools</span>
-      <div class="badges">
-        <span class="badge">GitHub Actions</span>
-        <span class="badge">Fastlane</span>
-        <span class="badge">Codemagic</span>
-        <span class="badge">Bitrise</span>
-        <span class="badge">Melos</span>
-        <span class="badge">Git</span>
-      </div>
-    </div>
+    <div class="skills-pre-wrap"><pre class="skills-pre">+--------------+------------------------------------------------------------------------+
+<span class="ln-primary">| flutter      | Widgets         Animation         Native Channel      State Management |</span>
++--------------+------------------------------------------------------------------------+
+| languages    | <span class="val">Dart            Kotlin            Java                                </span> |
+| architecture | <span class="val">Riverpod        BLoC              Clean Architecture  MVVM            </span> |
+| data         | <span class="val">Drift/SQLite    REST              WebSockets                          </span> |
+| native       | <span class="val">Android SDK     In-App Purchases  Push Notifications  Deep Links      </span> |
+| ci/cd        | <span class="val">GitHub Actions  Codemagic         Bitrise             Git             </span> |
++--------------+------------------------------------------------------------------------+</pre></div>
   </section>
 
   <!-- RECOMMENDATIONS -->
