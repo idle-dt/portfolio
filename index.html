@@ -59,19 +59,20 @@
 
   :root {
     --bg: #0a0a0a;
-    --surface: #111;
-    --border: #2a2a2a;
+    --surface: #131313;
+    --border: #323232;
     --text: #d0d0d0;
     --text-dim: #909090;
     --text-bright: #f0f0f0;
     --accent: #8a8a8a;
-    --link: #a0a0a0;
-    --cta-bg: #1a1a1a;
+    --link: #a8a8a8;
+    --cta-bg: #252525;
     --cta-border: #444;
     --cta-text: #c8c8c8;
     --available: #5a9a6a;
-    --badge-bg: #141414;
-    --badge-border: #2a2a2a;
+    --badge-bg: #1c1c1c;
+    --badge-border: #363636;
+    --comment: #6a9955;
     --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
     --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
@@ -82,16 +83,16 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--sans);
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
-  a { color: var(--link); }
+  a { color: var(--link); text-decoration: none; }
   a:hover { color: var(--text-bright); }
 
   .container {
-    max-width: 740px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 48px 24px 72px;
   }
@@ -105,12 +106,12 @@
 
   .header-inner {
     display: grid;
-    grid-template-columns: 130px 1fr;
+    grid-template-columns: 150px 1fr;
     gap: 24px;
   }
 
   .header-photo {
-    width: 130px;
+    width: 150px;
     overflow: hidden;
     opacity: 0.82;
     transition: opacity 0.2s;
@@ -127,7 +128,7 @@
 
   .header-info h1 {
     color: var(--text-bright);
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
     margin-bottom: 2px;
     letter-spacing: -0.3px;
@@ -135,7 +136,7 @@
 
   .header-title {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-dim);
     letter-spacing: 0.2px;
     margin-bottom: 12px;
@@ -154,7 +155,7 @@
     align-items: center;
     gap: 6px;
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--available);
     border: 1px solid #2a4a30;
     background: #0d1f10;
@@ -183,7 +184,7 @@
 
   .status-meta {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
   }
 
@@ -196,30 +197,35 @@
 
   .header-links a {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--link);
     text-decoration: none;
     transition: color 0.15s;
   }
 
-  .header-links a:hover { color: var(--text-bright); }
+  .header-links a:not(.btn-cv):hover {
+    color: var(--text-bright);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
-  .header-links .sep { color: var(--border); }
+  .header-links .sep { color: var(--text-dim); }
 
   .btn-cv {
     font-family: var(--mono) !important;
-    font-size: 11px !important;
+    font-size: 12px !important;
     color: var(--cta-text) !important;
     background: var(--cta-bg);
     border: 1px solid var(--cta-border) !important;
     padding: 3px 12px;
     border-radius: 2px;
     text-decoration: none !important;
-    transition: border-color 0.15s, color 0.15s !important;
+    transition: border-color 0.15s, color 0.15s, background 0.15s !important;
   }
 
   .btn-cv:hover {
     color: var(--text-bright) !important;
+    background: #2e2e2e !important;
     border-color: var(--accent) !important;
   }
 
@@ -233,7 +239,7 @@
 
   .about-prompt {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
     margin-bottom: 10px;
     letter-spacing: 0.3px;
@@ -242,7 +248,7 @@
   .about-prompt .ps { color: var(--available); }
 
   .about p {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text);
     line-height: 1.7;
     margin-bottom: 10px;
@@ -258,7 +264,7 @@
   }
 
   .about-list li {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text);
     padding: 3px 0 3px 14px;
     position: relative;
@@ -275,24 +281,25 @@
   /* Section title */
   .section-title {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 400;
-    color: var(--text-dim);
+    color: var(--text);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 14px;
-    margin-top: 36px;
+    margin-top: 48px;
   }
 
   /* Project cards */
   .project {
     border: 1px solid var(--border);
+    background: var(--surface);
     padding: 22px 24px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     transition: border-color 0.15s;
   }
 
-  .project:hover { border-color: #3a3a3a; }
+  .project:hover { border-color: #424242; }
 
   .project-meta {
     display: flex;
@@ -305,19 +312,19 @@
 
   .project-company {
     color: var(--text-bright);
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 600;
   }
 
   .project-dates {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
   }
 
   .project-role {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
     letter-spacing: 0.2px;
     margin-bottom: 2px;
@@ -325,35 +332,25 @@
 
   .project-agency {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-dim);
-    opacity: 0.65;
     margin-bottom: 8px;
     letter-spacing: 0.2px;
   }
 
   .project-oneliner {
     color: var(--text);
-    font-size: 14px;
+    font-size: 15px;
     margin: 8px 0 12px;
     line-height: 1.5;
   }
 
-  .project-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 12px;
-  }
-
-  .badge {
+  /* Project skills comment block */
+  .project-skills {
     font-family: var(--mono);
-    font-size: 11px;
-    color: #c4c4c4;
-    background: var(--badge-bg);
-    border: 1px solid #303030;
-    padding: 2px 8px;
-    border-radius: 2px;
+    font-size: 12.5px;
+    color: var(--comment);
+    margin-bottom: 12px;
     letter-spacing: 0.2px;
   }
 
@@ -363,7 +360,7 @@
   }
 
   .project-highlights li {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text);
     padding: 3px 0 3px 14px;
     position: relative;
@@ -386,17 +383,19 @@
 
   .project-links a {
     font-family: var(--mono);
-    font-size: 10px;
-    color: var(--link);
+    font-size: 11px;
+    color: var(--cta-text);
+    background: var(--cta-bg);
     text-decoration: none;
-    border: 1px solid var(--badge-border);
+    border: 1px solid var(--cta-border);
     padding: 3px 9px;
     border-radius: 2px;
-    transition: color 0.15s, border-color 0.15s;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
   }
 
   .project-links a:hover {
     color: var(--text-bright);
+    background: #2e2e2e;
     border-color: var(--accent);
   }
 
@@ -410,7 +409,7 @@
 
   .skills-title {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
     letter-spacing: 0.3px;
     margin-bottom: 16px;
@@ -424,7 +423,7 @@
 
   .skills-pre {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-dim);   /* all structural chars (| + -) are dim */
     line-height: 1.65;
     white-space: pre;
@@ -450,14 +449,14 @@
     flex-direction: column;
     justify-content: space-between;
     text-decoration: none;
-    transition: border-color 0.15s;
+    transition: border-color 0.15s, background 0.15s;
     background: var(--surface);
   }
 
-  .testimonial:hover { border-color: #3a3a3a; }
+  .testimonial:hover { border-color: #424242; background: #1a1a1a; }
 
   .testimonial-quote {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text);
     font-style: italic;
     line-height: 1.6;
@@ -466,13 +465,13 @@
 
   .testimonial-name {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-bright);
   }
 
   .testimonial-role {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-dim);
     margin-top: 2px;
   }
@@ -485,25 +484,26 @@
 
   .testimonials-more a {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--link);
     text-decoration: none;
-    border: 1px solid var(--badge-border);
-    padding: 4px 12px;
-    border-radius: 2px;
-    transition: color 0.15s, border-color 0.15s;
+    transition: color 0.15s;
   }
 
   .testimonials-more a:hover {
     color: var(--text-bright);
-    border-color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   /* Education */
   .section-education {
     margin-top: 32px;
-    padding-top: 22px;
-    border-top: 1px solid var(--border);
+  }
+  .education-card {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 20px 22px;
   }
 
   .education-item {
@@ -516,13 +516,13 @@
   }
 
   .education-item-title {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text);
   }
 
   .education-item-meta {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
     flex-shrink: 0;
   }
@@ -538,7 +538,7 @@
 
   .footer-prompt {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
     margin-bottom: 8px;
     white-space: nowrap;
@@ -549,7 +549,7 @@
   .footer-prompt .ps { color: var(--available); }
 
   .footer p {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text);
     margin-bottom: 18px;
   }
@@ -564,18 +564,19 @@
 
   .btn-primary {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--cta-text);
     background: var(--cta-bg);
     border: 1px solid var(--cta-border);
     padding: 7px 16px;
     border-radius: 2px;
     text-decoration: none;
-    transition: border-color 0.15s, color 0.15s;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
   }
 
   .btn-primary:hover {
     color: var(--text-bright) !important;
+    background: #2e2e2e;
     border-color: var(--accent);
   }
 
@@ -587,13 +588,17 @@
 
   .footer-links a {
     font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-dim);
+    font-size: 12px;
+    color: var(--link);
     text-decoration: none;
     transition: color 0.15s;
   }
 
-  .footer-links a:hover { color: var(--link); }
+  .footer-links a:hover {
+    color: var(--text-bright);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
   /* Scroll to top */
   .scroll-top {
@@ -601,16 +606,16 @@
     bottom: 24px;
     right: 24px;
     font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-dim);
-    background: var(--surface);
-    border: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--cta-text);
+    background: var(--cta-bg);
+    border: 1px solid var(--cta-border);
     padding: 6px 12px;
     border-radius: 2px;
     cursor: pointer;
     opacity: 0;
     pointer-events: none;
-    transition: color 0.15s, border-color 0.15s, opacity 0.2s;
+    transition: color 0.15s, border-color 0.15s, background 0.15s, opacity 0.2s;
     z-index: 100;
   }
   .scroll-top.visible {
@@ -619,30 +624,33 @@
   }
   .scroll-top:hover {
     color: var(--text-bright);
+    background: #2e2e2e;
     border-color: var(--accent);
   }
 
   /* Copy email */
   .copy-email {
     font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-dim);
+    font-size: 13px;
+    color: var(--link);
     background: none;
-    border: 1px solid var(--badge-border);
-    padding: 1px 6px;
-    border-radius: 2px;
+    border: none;
+    padding: 0;
     cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
+    transition: color 0.15s;
     line-height: 1.4;
     vertical-align: middle;
   }
+  .copy-email::before { content: '['; }
+  .copy-email::after  { content: ']'; }
+
   .copy-email:hover {
     color: var(--text-bright);
-    border-color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
   .copy-email.copied {
     color: var(--available);
-    border-color: #2a4a30;
   }
 
   /* Responsive */
@@ -657,7 +665,7 @@
     .skills-group-label { min-width: unset; }
     .education-item { flex-direction: column; gap: 2px; }
     .header-info h1 { font-size: 20px; }
-    .footer-prompt { font-size: 10px; }
+    .footer-prompt { font-size: 11px; }
   }
   /* Print */
   @media print {
@@ -701,7 +709,7 @@
   <header class="header">
     <div class="header-inner">
       <div class="header-photo">
-        <img src="images/photo.jpg?v=4" alt="Denys Taranenko" width="130" loading="eager">
+        <img src="images/photo.jpg?v=4" alt="Denys Taranenko" width="150" loading="eager">
       </div>
       <div class="header-info">
         <h1>Denys Taranenko</h1>
@@ -714,6 +722,8 @@
           <span class="status-meta">UTC+3 · Remote or EU relocation (NL / NO / SE)</span>
         </div>
         <div class="header-links">
+          <a class="btn-cv" href="CV_Denys_Taranenko.pdf" target="_blank" rel="noopener">↓ CV</a>
+          <span class="sep">·</span>
           <a href="mailto:taranenko.denis.serg@gmail.com">Email</a>
           <button class="copy-email" aria-label="Copy email address">copy</button>
           <span class="sep">·</span>
@@ -722,8 +732,6 @@
           <a href="https://github.com/idle-dt" target="_blank" rel="noopener">GitHub</a>
           <span class="sep">·</span>
           <a href="https://t.me/infinity_uncertainty" target="_blank" rel="noopener">Telegram</a>
-          <span class="sep">·</span>
-          <a class="btn-cv" href="CV_Denys_Taranenko.pdf" target="_blank" rel="noopener">↓ CV</a>
         </div>
       </div>
     </div>
@@ -753,15 +761,7 @@
     </div>
     <div class="project-role">Senior Mobile Engineer</div>
     <p class="project-oneliner">Cross-platform app — decentralized social network + multi-chain crypto wallet</p>
-    <div class="project-badges">
-      <span class="badge">Flutter</span>
-      <span class="badge">Dart</span>
-      <span class="badge">Riverpod</span>
-      <span class="badge">Freezed</span>
-      <span class="badge">Melos</span>
-      <span class="badge">Drift</span>
-      <span class="badge">React Native</span>
-    </div>
+    <div class="project-skills">// Flutter · Dart · Riverpod · Freezed · Melos · Drift · React Native</div>
     <ul class="project-highlights">
       <li>Built multi-chain wallet supporting 13+ blockchains and 10+ token standards</li>
       <li>Delivered swap/bridge engine integrating 4 providers with automatic fallback</li>
@@ -782,15 +782,9 @@
       <span class="project-company">Uscreen</span>
       <span class="project-dates">Jan 2022 – Sep 2024</span>
     </div>
-    <div class="project-role">Senior Flutter Engineer</div>
+    <div class="project-role">Senior Mobile Engineer</div>
     <p class="project-oneliner">White-label Flutter platform powering branded apps for hundreds of video creators</p>
-    <div class="project-badges">
-      <span class="badge">Flutter</span>
-      <span class="badge">Dart</span>
-      <span class="badge">Clean Architecture</span>
-      <span class="badge">AVFoundation</span>
-      <span class="badge">In-App Purchases</span>
-    </div>
+    <div class="project-skills">// Flutter · Dart · Clean Architecture · AVFoundation · In-App Purchases</div>
     <ul class="project-highlights">
       <li>Forked and extended native video_player (iOS AVFoundation + Android ExoPlayer) for deeper playback control</li>
       <li>Designed and shipped Playlist feature end-to-end across a shared codebase powering many generated apps</li>
@@ -810,16 +804,9 @@
       <span class="project-company">BuyCrypt</span>
       <span class="project-dates">Aug 2020 – Jan 2022</span>
     </div>
-    <div class="project-role">Senior Flutter Engineer · Freelance</div>
+    <div class="project-role">Senior Mobile Engineer · Freelance</div>
     <p class="project-oneliner">Multi-exchange crypto trading aggregator — Binance, Bybit, and more from one app</p>
-    <div class="project-badges">
-      <span class="badge">Flutter</span>
-      <span class="badge">Dart</span>
-      <span class="badge">BLoC</span>
-      <span class="badge">MVVM</span>
-      <span class="badge">WebSockets</span>
-      <span class="badge">Codemagic</span>
-    </div>
+    <div class="project-skills">// Flutter · Dart · BLoC · MVVM · WebSockets · Codemagic</div>
     <ul class="project-highlights">
       <li>Led MVVM → BLoC architecture migration with full documentation and incremental rollout plan</li>
       <li>Implemented live market data over WebSockets with reconnection and exponential backoff</li>
@@ -838,17 +825,10 @@
       <span class="project-company">Great Notion Brewing</span>
       <span class="project-dates">Jul 2019 – Dec 2021</span>
     </div>
-    <div class="project-role">Senior Flutter Engineer · Mobile Lead</div>
+    <div class="project-role">Senior Mobile Engineer</div>
     <div class="project-agency">via Windmill (agency)</div>
     <p class="project-oneliner">Portland craft brewery app — limited-release drops, AR mini-games, native integrations</p>
-    <div class="project-badges">
-      <span class="badge">Flutter</span>
-      <span class="badge">Dart</span>
-      <span class="badge">MVVM</span>
-      <span class="badge">Unity AR</span>
-      <span class="badge">Bitrise</span>
-      <span class="badge">Deep Links</span>
-    </div>
+    <div class="project-skills">// Flutter · Dart · MVVM · Unity AR · Bitrise · Deep Links</div>
     <ul class="project-highlights">
       <li>Designed app architecture from scratch; built the majority of features with pixel-perfect UI</li>
       <li>Integrated Unity AR mini-games into Flutter across the Flutter–Unity–native bridge</li>
@@ -871,13 +851,7 @@
     <div class="project-role">Android Engineer</div>
     <div class="project-agency">via Windmill (agency)</div>
     <p class="project-oneliner">Audio-wellness app for guided meditation and binaural-audio programs</p>
-    <div class="project-badges">
-      <span class="badge">Kotlin</span>
-      <span class="badge">Android SDK</span>
-      <span class="badge">Audio Streaming</span>
-      <span class="badge">Push Notifications</span>
-      <span class="badge">REST API</span>
-    </div>
+    <div class="project-skills">// Kotlin · Android SDK · Audio Streaming · Push Notifications · REST API</div>
     <ul class="project-highlights">
       <li>Ongoing Android development on a live product: features, bug fixes, and quality improvements</li>
       <li>Owned Android implementation end-to-end on smaller streams; partnered with tech lead on larger ones</li>
@@ -896,13 +870,7 @@
     </div>
     <div class="project-role">Android / Unity Engineer</div>
     <p class="project-oneliner">Early-stage studio — casual children's games and lightweight Android apps</p>
-    <div class="project-badges">
-      <span class="badge">Java</span>
-      <span class="badge">Android SDK</span>
-      <span class="badge">Canvas</span>
-      <span class="badge">Unity</span>
-      <span class="badge">REST API</span>
-    </div>
+    <div class="project-skills">// Java · Android SDK · Canvas · Unity · REST API</div>
     <ul class="project-highlights">
       <li>Native Android with custom Canvas-based rendering for game loops and animations</li>
       <li>Pixel-perfect UI in close collaboration with a 3-person design team</li>
@@ -918,13 +886,7 @@
     </div>
     <div class="project-role">Android Engineer · Freelance</div>
     <p class="project-oneliner">Medication aggregator — search, reserve, and order from pharmacy chains in one app</p>
-    <div class="project-badges">
-      <span class="badge">Java</span>
-      <span class="badge">Android SDK</span>
-      <span class="badge">SQLite</span>
-      <span class="badge">Maps</span>
-      <span class="badge">REST API</span>
-    </div>
+    <div class="project-skills">// Java · Android SDK · SQLite · Maps · REST API</div>
     <ul class="project-highlights">
       <li>Solo mobile developer — joined an existing codebase and owned it forward</li>
       <li>Unified inconsistent responses from multiple pharmacy backends into a single data layer</li>
@@ -982,13 +944,15 @@
   <!-- EDUCATION -->
   <section class="section-education">
     <h2 class="section-title">Education & Speaking</h2>
-    <div class="education-item">
-      <span class="education-item-title">Master's — Computer Science</span>
-      <span class="education-item-meta">National TU Dnipro Polytechnic · 2013–2018</span>
-    </div>
-    <div class="education-item">
-      <span class="education-item-title">Speaker — Kyiv Kotlin Night 2019</span>
-      <span class="education-item-meta">Talk: Flutter fundamentals for Android devs</span>
+    <div class="education-card">
+      <div class="education-item">
+        <span class="education-item-title">Master's — Computer Science</span>
+        <span class="education-item-meta">National TU Dnipro Polytechnic · 2013–2018</span>
+      </div>
+      <div class="education-item">
+        <span class="education-item-title">Speaker — Kyiv Kotlin Night 2019</span>
+        <span class="education-item-meta">Talk: Flutter fundamentals for Android devs</span>
+      </div>
     </div>
   </section>
 
