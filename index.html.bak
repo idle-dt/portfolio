@@ -32,19 +32,20 @@
 
   :root {
     --bg: #0a0a0a;
-    --surface: #111;
-    --border: #2a2a2a;
+    --surface: #131313;
+    --border: #323232;
     --text: #d0d0d0;
-    --text-dim: #777;
+    --text-dim: #909090;
     --text-bright: #f0f0f0;
     --accent: #8a8a8a;
-    --link: #a0a0a0;
-    --cta-bg: #1a1a1a;
+    --link: #a8a8a8;
+    --cta-bg: #252525;
     --cta-border: #444;
     --cta-text: #c8c8c8;
     --available: #5a9a6a;
-    --badge-bg: #141414;
-    --badge-border: #2a2a2a;
+    --badge-bg: #1c1c1c;
+    --badge-border: #363636;
+    --comment: #6a9955;
     --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
     --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
@@ -55,16 +56,16 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--sans);
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
-  a { color: var(--link); }
+  a { color: var(--link); text-decoration: none; }
   a:hover { color: var(--text-bright); }
 
   .container {
-    max-width: 740px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 48px 24px 72px;
   }
@@ -77,18 +78,27 @@
   }
 
   .header-inner {
+<<<<<<< HEAD:index.html.bak
     display: flex;
+=======
+    display: grid;
+    grid-template-columns: 150px 1fr;
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
     gap: 24px;
     align-items: stretch;
   }
 
   .header-photo {
+<<<<<<< HEAD:index.html.bak
     flex-shrink: 0;
     align-self: stretch;
     width: 104px;
     min-height: 130px;
     display: flex;
     border: 1px solid var(--border);
+=======
+    width: 150px;
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
     overflow: hidden;
     filter: grayscale(100%);
     opacity: 0.82;
@@ -103,14 +113,18 @@
     object-fit: cover;
     object-position: center 8%;
     display: block;
+<<<<<<< HEAD:index.html.bak
     min-height: 0;
+=======
+    border: 1px solid var(--border);
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
   }
 
   .header-info { flex: 1; }
 
   .header-info h1 {
     color: var(--text-bright);
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
     margin-bottom: 2px;
     letter-spacing: -0.3px;
@@ -118,7 +132,7 @@
 
   .header-title {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-dim);
     letter-spacing: 0.2px;
     margin-bottom: 12px;
@@ -137,7 +151,7 @@
     align-items: center;
     gap: 6px;
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--available);
     border: 1px solid #2a4a30;
     background: #0d1f10;
@@ -162,7 +176,7 @@
 
   .status-meta {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
   }
 
@@ -175,30 +189,35 @@
 
   .header-links a {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--link);
     text-decoration: none;
     transition: color 0.15s;
   }
 
-  .header-links a:hover { color: var(--text-bright); }
+  .header-links a:not(.btn-cv):hover {
+    color: var(--text-bright);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
-  .header-links .sep { color: var(--border); }
+  .header-links .sep { color: var(--text-dim); }
 
   .btn-cv {
     font-family: var(--mono) !important;
-    font-size: 11px !important;
+    font-size: 12px !important;
     color: var(--cta-text) !important;
     background: var(--cta-bg);
     border: 1px solid var(--cta-border) !important;
     padding: 3px 12px;
     border-radius: 2px;
     text-decoration: none !important;
-    transition: border-color 0.15s, color 0.15s !important;
+    transition: border-color 0.15s, color 0.15s, background 0.15s !important;
   }
 
   .btn-cv:hover {
     color: var(--text-bright) !important;
+    background: #2e2e2e !important;
     border-color: var(--accent) !important;
   }
 
@@ -212,16 +231,16 @@
 
   .about-prompt {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     letter-spacing: 0.3px;
   }
 
   .about-prompt .ps { color: var(--available); }
 
   .about p {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text);
     line-height: 1.7;
     margin-bottom: 10px;
@@ -237,7 +256,7 @@
   }
 
   .about-list li {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text);
     padding: 3px 0 3px 14px;
     position: relative;
@@ -254,23 +273,30 @@
   /* Section title */
   .section-title {
     font-family: var(--mono);
+<<<<<<< HEAD:index.html.bak
     font-size: 10px;
     color: var(--text-dim);
+=======
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text);
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 14px;
-    margin-top: 36px;
+    margin-top: 48px;
   }
 
   /* Project cards */
   .project {
     border: 1px solid var(--border);
+    background: var(--surface);
     padding: 22px 24px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     transition: border-color 0.15s;
   }
 
-  .project:hover { border-color: #3a3a3a; }
+  .project:hover { border-color: #424242; }
 
   .project-meta {
     display: flex;
@@ -283,19 +309,19 @@
 
   .project-company {
     color: var(--text-bright);
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 600;
   }
 
   .project-dates {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
   }
 
   .project-role {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
     letter-spacing: 0.2px;
     margin-bottom: 2px;
@@ -303,35 +329,35 @@
 
   .project-agency {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-dim);
-    opacity: 0.65;
     margin-bottom: 8px;
     letter-spacing: 0.2px;
   }
 
   .project-oneliner {
     color: var(--text);
-    font-size: 14px;
+    font-size: 15px;
     margin: 8px 0 12px;
     line-height: 1.5;
   }
 
-  .project-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 12px;
-  }
-
-  .badge {
+  /* Project skills comment block */
+  .project-skills {
     font-family: var(--mono);
+<<<<<<< HEAD:index.html.bak
     font-size: 10px;
     color: var(--text-dim);
     background: var(--badge-bg);
     border: 1px solid var(--badge-border);
     padding: 2px 7px;
     border-radius: 2px;
+=======
+    font-size: 12.5px;
+    color: var(--comment);
+    margin-top: 2px;
+    margin-bottom: 0;
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
     letter-spacing: 0.2px;
   }
 
@@ -341,7 +367,7 @@
   }
 
   .project-highlights li {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text);
     padding: 3px 0 3px 14px;
     position: relative;
@@ -364,17 +390,19 @@
 
   .project-links a {
     font-family: var(--mono);
-    font-size: 10px;
-    color: var(--link);
+    font-size: 11px;
+    color: var(--cta-text);
+    background: var(--cta-bg);
     text-decoration: none;
-    border: 1px solid var(--badge-border);
+    border: 1px solid var(--cta-border);
     padding: 3px 9px;
     border-radius: 2px;
-    transition: color 0.15s, border-color 0.15s;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
   }
 
   .project-links a:hover {
     color: var(--text-bright);
+    background: #2e2e2e;
     border-color: var(--accent);
   }
 
@@ -388,34 +416,51 @@
 
   .skills-title {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 12px;
     color: var(--text-dim);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+    margin-bottom: 12px;
+  }
+  .skills-title .ps { color: var(--available); }
+
+  /* Skills ASCII table */
+  .skills-pre-wrap {
+    overflow-x: auto;
   }
 
-  .skills-group {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 9px;
-    align-items: baseline;
-  }
-
-  .skills-group-label {
+  .skills-pre {
     font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    min-width: 112px;
-    flex-shrink: 0;
-    padding-top: 3px;
+    font-size: 13px;
+    color: var(--text-dim);   /* all structural chars (| + -) are dim */
+    line-height: 1.65;
+    white-space: pre;
+    margin: 0;
   }
 
-  .skills-group .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+  .skills-pre .ln-primary { color: var(--text-bright); }
+  .skills-pre .val        { color: var(--text); }
+
+  /* Skills mobile list */
+  .skills-mobile {
+    display: none;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+
+  .skills-mobile-row {
+    margin-bottom: 12px;
+  }
+
+  .skills-mobile-row:last-child { margin-bottom: 0; }
+
+  .skills-mobile-label {
+    color: var(--text-dim);
+    margin-bottom: 3px;
+  }
+
+  .skills-mobile-values {
+    color: var(--text);
+    line-height: 1.6;
   }
 
   /* Testimonials */
@@ -434,14 +479,14 @@
     flex-direction: column;
     justify-content: space-between;
     text-decoration: none;
-    transition: border-color 0.15s;
+    transition: border-color 0.15s, background 0.15s;
     background: var(--surface);
   }
 
-  .testimonial:hover { border-color: #3a3a3a; }
+  .testimonial:hover { border-color: #424242; background: #1a1a1a; }
 
   .testimonial-quote {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text);
     font-style: italic;
     line-height: 1.6;
@@ -450,13 +495,13 @@
 
   .testimonial-name {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-bright);
   }
 
   .testimonial-role {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-dim);
     margin-top: 2px;
   }
@@ -469,25 +514,26 @@
 
   .testimonials-more a {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--link);
     text-decoration: none;
-    border: 1px solid var(--badge-border);
-    padding: 4px 12px;
-    border-radius: 2px;
-    transition: color 0.15s, border-color 0.15s;
+    transition: color 0.15s;
   }
 
   .testimonials-more a:hover {
     color: var(--text-bright);
-    border-color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   /* Education */
   .section-education {
     margin-top: 32px;
-    padding-top: 22px;
-    border-top: 1px solid var(--border);
+  }
+  .education-card {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 20px 22px;
   }
 
   .education-item {
@@ -500,20 +546,20 @@
   }
 
   .education-item-title {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text);
   }
 
   .education-item-meta {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
     flex-shrink: 0;
   }
 
   /* Footer */
   .footer {
-    margin-top: 48px;
+    margin-top: 14px;
     padding: 24px 22px;
     border: 1px solid var(--border);
     background: var(--surface);
@@ -522,19 +568,21 @@
 
   .footer-prompt {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
+<<<<<<< HEAD:index.html.bak
     margin-bottom: 8px;
     word-break: break-all;
+=======
+    text-align: left;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding-bottom: 2px;
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
   }
 
   .footer-prompt .ps { color: var(--available); }
-
-  .footer p {
-    font-size: 14px;
-    color: var(--text);
-    margin-bottom: 18px;
-  }
 
   .footer-actions {
     display: flex;
@@ -546,18 +594,19 @@
 
   .btn-primary {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--cta-text);
     background: var(--cta-bg);
     border: 1px solid var(--cta-border);
     padding: 7px 16px;
     border-radius: 2px;
     text-decoration: none;
-    transition: border-color 0.15s, color 0.15s;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
   }
 
   .btn-primary:hover {
     color: var(--text-bright) !important;
+    background: #2e2e2e;
     border-color: var(--accent);
   }
 
@@ -569,15 +618,68 @@
 
   .footer-links a {
     font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-dim);
+    font-size: 12px;
+    color: var(--link);
     text-decoration: none;
     transition: color 0.15s;
   }
 
-  .footer-links a:hover { color: var(--link); }
+  .footer-links a:hover {
+    color: var(--text-bright);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Pre line (for row-by-row skills reveal) */
+  .pre-line { display: block; }
+
+  /* Typing cursor */
+  .type-cursor {
+    color: var(--available);
+    animation: cur-blink 0.65s step-end infinite;
+    margin-left: 1px;
+  }
+  .type-cursor--done {
+    animation: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  @keyframes cur-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* Copy email */
+  .copy-email {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--link);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.15s;
+    line-height: 1.4;
+    vertical-align: middle;
+  }
+  .copy-email::before { content: '['; }
+  .copy-email::after  { content: ']'; }
+
+  .copy-email:hover {
+    color: var(--text-bright);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .copy-email.copied {
+    color: var(--available);
+  }
 
   /* Responsive */
+  @media (max-width: 760px) {
+    .skills-pre-wrap { display: none; }
+    .skills-mobile   { display: block; }
+  }
+
   @media (max-width: 540px) {
     .container { padding: 28px 16px 48px; }
     .header-inner { flex-direction: column; gap: 16px; align-items: flex-start; }
@@ -589,7 +691,39 @@
     .skills-group-label { min-width: unset; }
     .education-item { flex-direction: column; gap: 2px; }
     .header-info h1 { font-size: 20px; }
-    .footer-prompt { font-size: 10px; }
+    .footer-prompt { font-size: 11px; }
+  }
+  /* Print */
+  @media print {
+    :root {
+      --bg: #fff;
+      --surface: #f8f8f8;
+      --border: #ddd;
+      --text: #222;
+      --text-dim: #666;
+      --text-bright: #000;
+      --link: #333;
+      --available: #2a6a30;
+      --badge-bg: #f5f5f5;
+      --badge-border: #ddd;
+    }
+
+    .copy-email,
+    .btn-cv,
+    .footer-actions,
+    .testimonials-more { display: none !important; }
+
+    .status-dot { animation: none !important; }
+
+    .container { padding: 12px 0; max-width: 100%; }
+
+    .project, .testimonial { break-inside: avoid; }
+
+    .testimonials-row { flex-direction: column; gap: 8px; }
+
+    .header-photo { opacity: 1 !important; }
+
+    a { color: #333 !important; text-decoration: none; }
   }
 </style>
 </head>
@@ -600,7 +734,11 @@
   <header class="header">
     <div class="header-inner">
       <div class="header-photo">
+<<<<<<< HEAD:index.html.bak
         <img src="images/photo.jpg?v=3" alt="Denys Taranenko">
+=======
+        <img src="images/photo.jpg?v=4" alt="Denys Taranenko" width="150" loading="eager">
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
       </div>
       <div class="header-info">
         <h1>Denys Taranenko</h1>
@@ -608,18 +746,25 @@
         <div class="status-line">
           <span class="status-badge">
             <span class="status-dot"></span>
-            Available now
+            Open to work
           </span>
           <span class="status-meta">UTC+3 · Remote or EU relocation (NL / NO / SE)</span>
         </div>
         <div class="header-links">
-          <a href="mailto:taranenko.denis.serg@gmail.com">taranenko.denis.serg@gmail.com</a>
+          <a class="btn-cv" href="CV_Denys_Taranenko.pdf" target="_blank" rel="noopener">↓ CV</a>
+          <span class="sep">·</span>
+          <a href="mailto:taranenko.denis.serg@gmail.com">Email</a>
+          <button class="copy-email" aria-label="Copy email address">copy</button>
           <span class="sep">·</span>
           <a href="https://www.linkedin.com/in/denys-taranenko" target="_blank" rel="noopener">LinkedIn</a>
           <span class="sep">·</span>
           <a href="https://github.com/idle-dt" target="_blank" rel="noopener">GitHub</a>
           <span class="sep">·</span>
+<<<<<<< HEAD:index.html.bak
           <a class="btn-cv" href="CV_Denys_Taranenko.pdf" download="CV_Denys_Taranenko.pdf" target="_blank" rel="noopener">↓ CV</a>
+=======
+          <a href="https://t.me/infinity_uncertainty" target="_blank" rel="noopener">Telegram</a>
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
         </div>
       </div>
     </div>
@@ -648,23 +793,15 @@
       <span class="project-dates">Nov 2024 – Apr 2026</span>
     </div>
     <div class="project-role">Senior Mobile Engineer</div>
-    <p class="project-oneliner">Cross-platform app — decentralized social network + multi-chain crypto wallet</p>
-    <div class="project-badges">
-      <span class="badge">Flutter</span>
-      <span class="badge">Dart</span>
-      <span class="badge">Riverpod</span>
-      <span class="badge">Freezed</span>
-      <span class="badge">Melos</span>
-      <span class="badge">Drift</span>
-      <span class="badge">React Native</span>
-    </div>
+    <div class="project-skills">// Flutter · Dart · Riverpod · Freezed · Melos · Drift · React Native</div>
+    <p class="project-oneliner">Cross-platform app — Nostr-based decentralized social network + multi-chain crypto wallet</p>
     <ul class="project-highlights">
-      <li>Built multi-chain wallet supporting 13+ blockchains and 10+ token standards</li>
-      <li>Delivered swap/bridge engine integrating 4 providers with automatic fallback</li>
-      <li>Designed chain-agnostic send/receive pipeline covering gas, validator, and memo models</li>
-      <li>Contributed across 30+ feature modules in a Riverpod + Freezed + Melos monorepo</li>
+      <li>Built multi-chain wallet covering EVM, Solana, Cosmos and UTXO families with a chain-agnostic send/receive pipeline handling gas, validator fees, memos, UTXO dust and SPL accounts</li>
+      <li>Delivered swap/bridge engine integrating 4 providers with quote aggregation, slippage control and automatic fallback</li>
+      <li>Local-first persistence on SQLite (Drift) for coins, transactions, NFTs and user data</li>
+      <li>Contributed across 30+ feature modules in a Riverpod + Freezed + Melos monorepo; delivered feed, stories, communities, search, comments and reactions on the Nostr-based relay</li>
       <li>Participated in Flutter-to-React Native migration and native app improvements</li>
-      <li>Led a sub-team of 3 inside a 14-person mobile group</li>
+      <li>Led a sub-team of 3 inside a 14-person mobile group; raised baseline code quality through static analysis and code-generation practices</li>
     </ul>
     <div class="project-links">
       <a href="https://ice.io/" target="_blank" rel="noopener">Website</a>
@@ -677,15 +814,9 @@
       <span class="project-company">Uscreen</span>
       <span class="project-dates">Jan 2022 – Sep 2024</span>
     </div>
-    <div class="project-role">Senior Flutter Engineer</div>
+    <div class="project-role">Senior Mobile Engineer</div>
+    <div class="project-skills">// Flutter · Dart · Clean Architecture · AVFoundation · In-App Purchases</div>
     <p class="project-oneliner">White-label Flutter platform powering branded apps for hundreds of video creators</p>
-    <div class="project-badges">
-      <span class="badge">Flutter</span>
-      <span class="badge">Dart</span>
-      <span class="badge">Clean Architecture</span>
-      <span class="badge">AVFoundation</span>
-      <span class="badge">In-App Purchases</span>
-    </div>
     <ul class="project-highlights">
       <li>Forked and extended native video_player (iOS AVFoundation + Android ExoPlayer) for deeper playback control</li>
       <li>Designed and shipped Playlist feature end-to-end across a shared codebase powering many generated apps</li>
@@ -705,8 +836,10 @@
       <span class="project-company">BuyCrypt</span>
       <span class="project-dates">Aug 2020 – Jan 2022</span>
     </div>
-    <div class="project-role">Senior Flutter Engineer · Freelance</div>
+    <div class="project-role">Senior Mobile Engineer · Freelance</div>
+    <div class="project-skills">// Flutter · Dart · BLoC · MVVM · WebSockets · Codemagic</div>
     <p class="project-oneliner">Multi-exchange crypto trading aggregator — Binance, Bybit, and more from one app</p>
+<<<<<<< HEAD:index.html.bak
     <div class="project-badges">
       <span class="badge">Flutter</span>
       <span class="badge">Dart</span>
@@ -714,9 +847,12 @@
       <span class="badge">WebSockets</span>
       <span class="badge">Codemagic</span>
     </div>
+=======
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
     <ul class="project-highlights">
       <li>Led MVVM → BLoC architecture migration with full documentation and incremental rollout plan</li>
       <li>Implemented live market data over WebSockets with reconnection and exponential backoff</li>
+      <li>Worked on wallet security and handling of user API credentials — minimizing attack surface and preventing unauthorized access</li>
       <li>Performance-tuned exchange layer for concurrent streams and order placement without UI blocking</li>
       <li>Maintained CI/CD pipelines in Codemagic for automated iOS and Android builds</li>
     </ul>
@@ -732,19 +868,12 @@
       <span class="project-company">Great Notion Brewing</span>
       <span class="project-dates">Jul 2019 – Dec 2021</span>
     </div>
-    <div class="project-role">Senior Flutter Engineer · Mobile Lead</div>
+    <div class="project-role">Senior Mobile Engineer</div>
     <div class="project-agency">via Windmill (agency)</div>
+    <div class="project-skills">// Flutter · Dart · MVVM · Unity AR · Bitrise · Deep Links</div>
     <p class="project-oneliner">Portland craft brewery app — limited-release drops, AR mini-games, native integrations</p>
-    <div class="project-badges">
-      <span class="badge">Flutter</span>
-      <span class="badge">Dart</span>
-      <span class="badge">MVVM</span>
-      <span class="badge">Unity AR</span>
-      <span class="badge">Bitrise</span>
-      <span class="badge">Deep Links</span>
-    </div>
     <ul class="project-highlights">
-      <li>Designed app architecture from scratch; built the majority of features with pixel-perfect UI</li>
+      <li>Designed app architecture from scratch in MVVM; built the majority of features with pixel-perfect UI from Figma</li>
       <li>Integrated Unity AR mini-games into Flutter across the Flutter–Unity–native bridge</li>
       <li>Coordinated cross-team communication between Unity, mobile, backend, and product — ran demos and alignment calls</li>
       <li>Native integrations: push alerts for beer drops, deep links, home-screen widgets (iOS + Android)</li>
@@ -765,14 +894,8 @@
     </div>
     <div class="project-role">Android Engineer</div>
     <div class="project-agency">via Windmill (agency)</div>
+    <div class="project-skills">// Kotlin · Android SDK · Audio Streaming · Push Notifications · REST API</div>
     <p class="project-oneliner">Audio-wellness app for guided meditation and binaural-audio programs</p>
-    <div class="project-badges">
-      <span class="badge">Kotlin</span>
-      <span class="badge">Android SDK</span>
-      <span class="badge">Audio Streaming</span>
-      <span class="badge">Push Notifications</span>
-      <span class="badge">REST API</span>
-    </div>
     <ul class="project-highlights">
       <li>Ongoing Android development on a live product: features, bug fixes, and quality improvements</li>
       <li>Owned Android implementation end-to-end on smaller streams; partnered with tech lead on larger ones</li>
@@ -790,17 +913,12 @@
       <span class="project-dates">Oct 2017 – Jul 2018</span>
     </div>
     <div class="project-role">Android / Unity Engineer</div>
+    <div class="project-skills">// Java · Android SDK · Canvas · Unity · REST API</div>
     <p class="project-oneliner">Early-stage studio — casual children's games and lightweight Android apps</p>
-    <div class="project-badges">
-      <span class="badge">Java</span>
-      <span class="badge">Android SDK</span>
-      <span class="badge">Canvas</span>
-      <span class="badge">Unity</span>
-      <span class="badge">REST API</span>
-    </div>
     <ul class="project-highlights">
       <li>Native Android with custom Canvas-based rendering for game loops and animations</li>
-      <li>Pixel-perfect UI in close collaboration with a 3-person design team</li>
+      <li>Worked inside a cross-functional team of 3 Android developers, 3 designers and 2 full-stack engineers, delivering a steady stream of small products under tight timelines</li>
+      <li>Pixel-perfect UI in close collaboration with the design team</li>
       <li>Short Unity stint on a children's platformer; steady stream of small products under tight timelines</li>
       <li>Where I learned to ship — fast iteration, tight collaboration, owning implementation end-to-end</li>
     </ul>
@@ -812,78 +930,63 @@
       <span class="project-dates">Apr 2016 – Oct 2017</span>
     </div>
     <div class="project-role">Android Engineer · Freelance</div>
+    <div class="project-skills">// Java · Android SDK · SQLite · Maps · REST API</div>
     <p class="project-oneliner">Medication aggregator — search, reserve, and order from pharmacy chains in one app</p>
-    <div class="project-badges">
-      <span class="badge">Java</span>
-      <span class="badge">Android SDK</span>
-      <span class="badge">SQLite</span>
-      <span class="badge">Maps</span>
-      <span class="badge">REST API</span>
-    </div>
     <ul class="project-highlights">
+      <li>Native Android app in Java (pre-Kotlin era) with a clean, accessible UI</li>
       <li>Solo mobile developer — joined an existing codebase and owned it forward</li>
       <li>Unified inconsistent responses from multiple pharmacy backends into a single data layer</li>
       <li>Local SQLite cache for medication data — offline-first, reduced network round-trips</li>
       <li>Pharmacy map with proximity calculation and routing to nearest stores</li>
+      <li>Background sync to refresh pharmacy inventories against multiple upstream servers</li>
     </ul>
   </section>
 
   <!-- SKILLS -->
   <section class="skills">
-    <div class="skills-title">Tech Stack</div>
-    <div class="skills-group">
-      <span class="skills-group-label">Frameworks</span>
-      <div class="badges">
-        <span class="badge">Flutter</span>
-        <span class="badge">React Native</span>
+    <div class="skills-title"><span class="ps">$</span> tech-stack --list</div>
+    <div class="skills-pre-wrap"><pre class="skills-pre">+--------------+------------------------------------------------------------------------+
+| flutter      | <span class="val">Widgets         Animation      Native Channel      State Management   </span> |
+| languages    | <span class="val">Dart            Kotlin         Java                                   </span> |
+| architecture | <span class="val">Riverpod        BLoC           Clean Architecture  MVVM               </span> |
+| data         | <span class="val">Drift/SQLite    REST           WebSockets                             </span> |
+| native       | <span class="val">Android SDK     iOS            In-App Purchases    Push Notifications </span> |
+| firebase     | <span class="val">Crashlytics     Remote Config  Dynamic Links       Analytics          </span> |
+| ci/cd        | <span class="val">GitHub Actions  Codemagic      Bitrise             Git                </span> |
+| testing      | <span class="val">Flutter Test    Mockito        Widget Testing      Integration Testing</span> |
++--------------+------------------------------------------------------------------------+</pre></div>
+    <div class="skills-mobile">
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">flutter</div>
+        <div class="skills-mobile-values">Widgets · Animation · Native Channel · State Management</div>
       </div>
-    </div>
-    <div class="skills-group">
-      <span class="skills-group-label">Languages</span>
-      <div class="badges">
-        <span class="badge">Dart</span>
-        <span class="badge">Kotlin</span>
-        <span class="badge">Java</span>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">languages</div>
+        <div class="skills-mobile-values">Dart · Kotlin · Java</div>
       </div>
-    </div>
-    <div class="skills-group">
-      <span class="skills-group-label">Architecture</span>
-      <div class="badges">
-        <span class="badge">Riverpod</span>
-        <span class="badge">BLoC</span>
-        <span class="badge">Clean Architecture</span>
-        <span class="badge">MVVM</span>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">architecture</div>
+        <div class="skills-mobile-values">Riverpod · BLoC · Clean Architecture · MVVM</div>
       </div>
-    </div>
-    <div class="skills-group">
-      <span class="skills-group-label">Data & Networking</span>
-      <div class="badges">
-        <span class="badge">Drift / SQLite</span>
-        <span class="badge">REST</span>
-        <span class="badge">WebSockets</span>
-        <span class="badge">Dio</span>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">data</div>
+        <div class="skills-mobile-values">Drift/SQLite · REST · WebSockets</div>
       </div>
-    </div>
-    <div class="skills-group">
-      <span class="skills-group-label">Native</span>
-      <div class="badges">
-        <span class="badge">iOS (AVFoundation)</span>
-        <span class="badge">Android SDK</span>
-        <span class="badge">In-App Purchases</span>
-        <span class="badge">Push Notifications</span>
-        <span class="badge">Deep Links</span>
-        <span class="badge">Widgets</span>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">native</div>
+        <div class="skills-mobile-values">Android SDK · iOS · In-App Purchases · Push Notifications</div>
       </div>
-    </div>
-    <div class="skills-group">
-      <span class="skills-group-label">CI / CD & Tools</span>
-      <div class="badges">
-        <span class="badge">GitHub Actions</span>
-        <span class="badge">Fastlane</span>
-        <span class="badge">Codemagic</span>
-        <span class="badge">Bitrise</span>
-        <span class="badge">Melos</span>
-        <span class="badge">Git</span>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">firebase</div>
+        <div class="skills-mobile-values">Crashlytics · Remote Config · Dynamic Links · Analytics</div>
+      </div>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">ci/cd</div>
+        <div class="skills-mobile-values">GitHub Actions · Codemagic · Bitrise · Git</div>
+      </div>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">testing</div>
+        <div class="skills-mobile-values">Flutter Test · Mockito · Widget Testing · Integration Testing</div>
       </div>
     </div>
   </section>
@@ -892,11 +995,16 @@
   <section class="section-testimonials">
     <div class="section-title">Recommendations</div>
     <div class="testimonials-row">
+<<<<<<< HEAD:index.html.bak
       <a class="testimonial" href="https://www.linkedin.com/in/denys-taranenko/details/recommendations/" target="_blank" rel="noopener">
         <div class="testimonial-quote">"Denys is 100% top-tier. His code is clean, his solutions are thoughtful, and he moves fast without cutting corners..."</div>
+=======
+      <a class="testimonial" href="https://www.linkedin.com/in/denys-taranenko-7912a9152/details/recommendations/" target="_blank" rel="noopener" aria-label="Read Antony Yurchanka's recommendation on LinkedIn">
+        <div class="testimonial-quote">"He always delivered features fast and with great quality. Denys was responsible and dependable — you could always count on him to tackle even the toughest tasks..."</div>
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
         <div>
-          <div class="testimonial-name">Ivan Kolchev</div>
-          <div class="testimonial-role">Head of Mobile · Ice Open Network</div>
+          <div class="testimonial-name">Antony Yurchanka</div>
+          <div class="testimonial-role">Lead Mobile Engineer · Uscreen</div>
         </div>
       </a>
       <a class="testimonial" href="https://www.linkedin.com/in/denys-taranenko/details/recommendations/" target="_blank" rel="noopener">
@@ -921,6 +1029,7 @@
 
   <!-- EDUCATION -->
   <section class="section-education">
+<<<<<<< HEAD:index.html.bak
     <div class="section-title">Education & Speaking</div>
     <div class="education-item">
       <span class="education-item-title">Master's — Computer Science</span>
@@ -929,13 +1038,31 @@
     <div class="education-item">
       <span class="education-item-title">Speaker — Kyiv Kotlin Night 2019</span>
       <span class="education-item-meta">Talk: Flutter fundamentals for Android devs</span>
+=======
+    <h2 class="section-title">Education & Speaking</h2>
+    <div class="education-card">
+      <div class="education-item">
+        <span class="education-item-title">Master's — Computer Science</span>
+        <span class="education-item-meta">National TU Dnipro Polytechnic · 2013–2018</span>
+      </div>
+      <div class="education-item">
+        <span class="education-item-title">Speaker — Kyiv Kotlin Night 2019</span>
+        <span class="education-item-meta">Talk: Flutter fundamentals for Android devs</span>
+      </div>
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- CONTACT -->
+  <h2 class="section-title">Contact</h2>
+
   <footer class="footer">
+<<<<<<< HEAD:index.html.bak
     <div class="footer-prompt"><span class="ps">$</span> open-to-work --role "Senior Flutter / Mobile Lead" --type remote,eu-relocation --start immediately</div>
     <p>Let's build something great. I'm available now.</p>
+=======
+    <div class="footer-prompt"><span class="ps">$</span> open-to-work --role "Senior Mobile / Team Lead" --type remote,eu-relocation --start immediately</div>
+>>>>>>> 177644a (fix(portfolio): pre-clear prompt text to prevent animation flash on scroll):portfolio/index.html
     <div class="footer-actions">
       <a class="btn-primary" href="mailto:taranenko.denis.serg@gmail.com">Send Email</a>
       <a class="btn-primary" href="https://www.linkedin.com/in/denys-taranenko" target="_blank" rel="noopener">Connect on LinkedIn</a>
@@ -943,9 +1070,119 @@
     </div>
     <div class="footer-links">
       <a href="https://github.com/idle-dt" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://t.me/infinity_uncertainty" target="_blank" rel="noopener">Telegram</a>
     </div>
   </footer>
 
 </div>
+
+<script>
+  // ── Terminal: typing + output reveal ────────────────────────────
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const SPEED   = 28; // ms per character
+    const STAGGER = 70; // ms between output lines
+
+    // Pre-hide output content
+    document.querySelectorAll('.about p, .about-list li').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transition = 'opacity 0.2s ease';
+    });
+
+    const skillsPre = document.querySelector('.skills-pre');
+    if (skillsPre) {
+      const lines = skillsPre.innerHTML.trimEnd().split('\n');
+      skillsPre.innerHTML = lines.map(l => `<span class="pre-line">${l}</span>`).join('');
+      skillsPre.querySelectorAll('.pre-line').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transition = 'opacity 0.15s ease';
+      });
+    }
+
+    document.querySelectorAll('.footer-actions, .footer-links').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transition = 'opacity 0.3s ease';
+    });
+
+    // Pre-clear prompt text to prevent flash-of-full-text on scroll
+    document.querySelectorAll('.about-prompt, .skills-title, .footer-prompt').forEach(el => {
+      const ps = el.querySelector('.ps');
+      if (!ps) return;
+      const sibling = ps.nextSibling;
+      if (!sibling || sibling.nodeType !== Node.TEXT_NODE) return;
+      el.dataset.cmd = sibling.textContent.replace(/^\s/, '');
+      sibling.textContent = ' ';
+    });
+
+    // Typing function with onDone callback
+    function runTyping(el, onDone, speed = SPEED) {
+      const cmd = el.dataset.cmd;
+      if (!cmd) return;
+
+      const typed  = document.createElement('span');
+      const cursor = document.createElement('span');
+      cursor.className = 'type-cursor';
+      el.appendChild(typed);
+      el.appendChild(cursor);
+
+      let i = 0;
+      const tick = setInterval(() => {
+        typed.textContent += cmd[i++];
+        if (i >= cmd.length) {
+          clearInterval(tick);
+          setTimeout(() => {
+            cursor.classList.add('type-cursor--done');
+            if (onDone) onDone();
+          }, 400);
+        }
+      }, speed);
+    }
+
+    // Output reveal per section
+    function revealAbout() {
+      [...document.querySelectorAll('.about p, .about-list li')]
+        .forEach((el, i) => setTimeout(() => { el.style.opacity = '1'; }, i * STAGGER));
+    }
+
+    function revealSkills() {
+      [...document.querySelectorAll('.skills-pre .pre-line')]
+        .forEach((el, i) => setTimeout(() => { el.style.opacity = '1'; }, i * STAGGER));
+    }
+
+    function revealFooter() {
+      [...document.querySelectorAll('.footer-actions, .footer-links')]
+        .forEach((el, i) => setTimeout(() => { el.style.opacity = '1'; }, i * 200));
+    }
+
+    // Wire up observers
+    [
+      { selector: '.about-prompt',  onDone: revealAbout  },
+      { selector: '.skills-title',  onDone: revealSkills },
+      { selector: '.footer-prompt', onDone: revealFooter, speed: 12 },
+    ].forEach(({ selector, onDone, speed }) => {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      const io = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) return;
+        io.unobserve(el);
+        runTyping(el, onDone, speed);
+      }, { threshold: 0.8 });
+      io.observe(el);
+    });
+  })();
+
+  // Copy email
+  document.querySelector('.copy-email').addEventListener('click', function () {
+    navigator.clipboard.writeText('taranenko.denis.serg@gmail.com').then(() => {
+      this.textContent = 'copied!';
+      this.classList.add('copied');
+      setTimeout(() => {
+        this.textContent = 'copy';
+        this.classList.remove('copied');
+      }, 2000);
+    });
+  });
+</script>
 </body>
 </html>
