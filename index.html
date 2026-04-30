@@ -1006,10 +1006,6 @@
         <span class="education-item-title">Speaker — Kyiv Kotlin Night 2019</span>
         <span class="education-item-meta">Talk: Flutter fundamentals for Android devs</span>
       </div>
-      <div class="education-item">
-        <span class="education-item-title">Speaker — 2020 & 2021</span>
-        <span class="education-item-meta">Talks on state management and app architecture</span>
-      </div>
     </div>
   </section>
 
@@ -1055,12 +1051,6 @@
       });
     }
 
-    const skillsMobile = document.querySelector('.skills-mobile');
-    if (skillsMobile) {
-      skillsMobile.style.opacity = '0';
-      skillsMobile.style.transition = 'opacity 0.4s ease';
-    }
-
     document.querySelectorAll('.footer-actions, .footer-links').forEach(el => {
       el.style.opacity = '0';
       el.style.transition = 'opacity 0.3s ease';
@@ -1103,24 +1093,12 @@
     function revealSkills() {
       [...document.querySelectorAll('.skills-pre .pre-line')]
         .forEach((el, i) => setTimeout(() => { el.style.opacity = '1'; }, i * STAGGER));
-      const mob = document.querySelector('.skills-mobile');
-      if (mob) setTimeout(() => { mob.style.opacity = '1'; }, 200);
     }
 
     function revealFooter() {
       [...document.querySelectorAll('.footer-actions, .footer-links')]
         .forEach((el, i) => setTimeout(() => { el.style.opacity = '1'; }, i * 200));
     }
-
-    // Safety fallback — reveal everything after 4s regardless
-    const revealAll = () => {
-      document.querySelectorAll('.about p, .about-list li').forEach(el => { el.style.opacity = '1'; });
-      document.querySelectorAll('.skills-pre .pre-line').forEach(el => { el.style.opacity = '1'; });
-      const mob = document.querySelector('.skills-mobile');
-      if (mob) mob.style.opacity = '1';
-      document.querySelectorAll('.footer-actions, .footer-links').forEach(el => { el.style.opacity = '1'; });
-    };
-    const safetyTimer = setTimeout(revealAll, 4000);
 
     // Wire up observers
     [
@@ -1136,18 +1114,6 @@
         runTyping(el, onDone, speed);
       }, { threshold: 0.8 });
       io.observe(el);
-    });
-
-    // Cancel safety timer once all sections have been seen
-    let sectionsRevealed = 0;
-    const origRevealAbout  = revealAbout;
-    const origRevealSkills = revealSkills;
-    const origRevealFooter = revealFooter;
-    function checkAllRevealed() { if (++sectionsRevealed >= 3) clearTimeout(safetyTimer); }
-    // Wrap reveals to track completion
-    ['.about-prompt', '.skills-title', '.footer-prompt'].forEach(sel => {
-      const el = document.querySelector(sel);
-      if (el) new IntersectionObserver(([e]) => { if (e.isIntersecting) checkAllRevealed(); }, { threshold: 0.1 }).observe(el);
     });
   })();
 
