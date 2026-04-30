@@ -122,6 +122,7 @@
   .header-photo img {
     width: 100%;
     display: block;
+    border: 1px solid var(--border);
   }
 
   .header-info { min-width: 0; }
@@ -434,6 +435,29 @@
   .skills-pre .ln-primary { color: var(--text-bright); }
   .skills-pre .val        { color: var(--text); }
 
+  /* Skills mobile list */
+  .skills-mobile {
+    display: none;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+
+  .skills-mobile-row {
+    margin-bottom: 12px;
+  }
+
+  .skills-mobile-row:last-child { margin-bottom: 0; }
+
+  .skills-mobile-label {
+    color: var(--text-dim);
+    margin-bottom: 3px;
+  }
+
+  .skills-mobile-values {
+    color: var(--text);
+    line-height: 1.6;
+  }
+
   /* Testimonials */
   .section-testimonials { margin-top: 32px; }
 
@@ -641,6 +665,11 @@
   }
 
   /* Responsive */
+  @media (max-width: 760px) {
+    .skills-pre-wrap { display: none; }
+    .skills-mobile   { display: block; }
+  }
+
   @media (max-width: 540px) {
     .container { padding: 28px 16px 48px; }
     .header-inner { grid-template-columns: 100px 1fr; gap: 16px; }
@@ -886,7 +915,7 @@
     <div class="skills-title"><span class="ps">$</span> tech-stack --list</div>
     <div class="skills-pre-wrap"><pre class="skills-pre">+--------------+------------------------------------------------------------------------+
 | flutter      | <span class="val">Widgets         Animation      Native Channel      State Management   </span> |
-| languages    | <span class="val">Dart            Kotlin         Java                React Native       </span> |
+| languages    | <span class="val">Dart            Kotlin         Java                                   </span> |
 | architecture | <span class="val">Riverpod        BLoC           Clean Architecture  MVVM               </span> |
 | data         | <span class="val">Drift/SQLite    REST           WebSockets                             </span> |
 | native       | <span class="val">Android SDK     iOS            In-App Purchases    Push Notifications </span> |
@@ -894,31 +923,65 @@
 | ci/cd        | <span class="val">GitHub Actions  Codemagic      Bitrise             Git                </span> |
 | testing      | <span class="val">Flutter Test    Mockito        Widget Testing      Integration Testing</span> |
 +--------------+------------------------------------------------------------------------+</pre></div>
+    <div class="skills-mobile">
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">flutter</div>
+        <div class="skills-mobile-values">Widgets · Animation · Native Channel · State Management</div>
+      </div>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">languages</div>
+        <div class="skills-mobile-values">Dart · Kotlin · Java</div>
+      </div>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">architecture</div>
+        <div class="skills-mobile-values">Riverpod · BLoC · Clean Architecture · MVVM</div>
+      </div>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">data</div>
+        <div class="skills-mobile-values">Drift/SQLite · REST · WebSockets</div>
+      </div>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">native</div>
+        <div class="skills-mobile-values">Android SDK · iOS · In-App Purchases · Push Notifications</div>
+      </div>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">firebase</div>
+        <div class="skills-mobile-values">Crashlytics · Remote Config · Dynamic Links · Analytics</div>
+      </div>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">ci/cd</div>
+        <div class="skills-mobile-values">GitHub Actions · Codemagic · Bitrise · Git</div>
+      </div>
+      <div class="skills-mobile-row">
+        <div class="skills-mobile-label">testing</div>
+        <div class="skills-mobile-values">Flutter Test · Mockito · Widget Testing · Integration Testing</div>
+      </div>
+    </div>
   </section>
 
   <!-- RECOMMENDATIONS -->
   <section class="section-testimonials">
     <h2 class="section-title">Recommendations</h2>
     <div class="testimonials-row">
-      <a class="testimonial" href="https://www.linkedin.com/in/denys-taranenko-7912a9152/details/recommendations/" target="_blank" rel="noopener" aria-label="Read Ivan Kolchev's recommendation on LinkedIn">
-        <div class="testimonial-quote">"Denys is 100% top-tier. His code is clean, his solutions are thoughtful, and he moves fast without cutting corners..."</div>
+      <a class="testimonial" href="https://www.linkedin.com/in/denys-taranenko-7912a9152/details/recommendations/" target="_blank" rel="noopener" aria-label="Read Antony Yurchanka's recommendation on LinkedIn">
+        <div class="testimonial-quote">"He always delivered features fast and with great quality. Denys was responsible and dependable — you could always count on him to tackle even the toughest tasks..."</div>
         <div>
-          <div class="testimonial-name">Ivan Kolchev</div>
-          <div class="testimonial-role">Senior Mobile Engineer</div>
+          <div class="testimonial-name">Antony Yurchanka</div>
+          <div class="testimonial-role">Lead Mobile Engineer · Uscreen</div>
         </div>
       </a>
       <a class="testimonial" href="https://www.linkedin.com/in/denys-taranenko-7912a9152/details/recommendations/" target="_blank" rel="noopener" aria-label="Read Yuliia Artemenko's recommendation on LinkedIn">
         <div class="testimonial-quote">"Denys was one of the top developers on the team. Highly skilled technically, incredibly dependable..."</div>
         <div>
           <div class="testimonial-name">Yuliia Artemenko</div>
-          <div class="testimonial-role">Lead Product Owner</div>
+          <div class="testimonial-role">Lead Product Owner · Ice Open Network</div>
         </div>
       </a>
       <a class="testimonial" href="https://www.linkedin.com/in/denys-taranenko-7912a9152/details/recommendations/" target="_blank" rel="noopener" aria-label="Read Andrey Lykov's recommendation on LinkedIn">
         <div class="testimonial-quote">"He didn't just implement designs — he actively engaged in discussions about usability, animations, and micro-interactions..."</div>
         <div>
           <div class="testimonial-name">Andrey Lykov</div>
-          <div class="testimonial-role">Product Designer</div>
+          <div class="testimonial-role">Product Designer · Ice Open Network</div>
         </div>
       </a>
     </div>
@@ -984,6 +1047,12 @@
       });
     }
 
+    const skillsMobile = document.querySelector('.skills-mobile');
+    if (skillsMobile) {
+      skillsMobile.style.opacity = '0';
+      skillsMobile.style.transition = 'opacity 0.4s ease';
+    }
+
     document.querySelectorAll('.footer-actions, .footer-links').forEach(el => {
       el.style.opacity = '0';
       el.style.transition = 'opacity 0.3s ease';
@@ -1026,12 +1095,24 @@
     function revealSkills() {
       [...document.querySelectorAll('.skills-pre .pre-line')]
         .forEach((el, i) => setTimeout(() => { el.style.opacity = '1'; }, i * STAGGER));
+      const mob = document.querySelector('.skills-mobile');
+      if (mob) setTimeout(() => { mob.style.opacity = '1'; }, 200);
     }
 
     function revealFooter() {
       [...document.querySelectorAll('.footer-actions, .footer-links')]
         .forEach((el, i) => setTimeout(() => { el.style.opacity = '1'; }, i * 200));
     }
+
+    // Safety fallback — reveal everything after 4s regardless
+    const revealAll = () => {
+      document.querySelectorAll('.about p, .about-list li').forEach(el => { el.style.opacity = '1'; });
+      document.querySelectorAll('.skills-pre .pre-line').forEach(el => { el.style.opacity = '1'; });
+      const mob = document.querySelector('.skills-mobile');
+      if (mob) mob.style.opacity = '1';
+      document.querySelectorAll('.footer-actions, .footer-links').forEach(el => { el.style.opacity = '1'; });
+    };
+    const safetyTimer = setTimeout(revealAll, 4000);
 
     // Wire up observers
     [
@@ -1047,6 +1128,18 @@
         runTyping(el, onDone, speed);
       }, { threshold: 0.8 });
       io.observe(el);
+    });
+
+    // Cancel safety timer once all sections have been seen
+    let sectionsRevealed = 0;
+    const origRevealAbout  = revealAbout;
+    const origRevealSkills = revealSkills;
+    const origRevealFooter = revealFooter;
+    function checkAllRevealed() { if (++sectionsRevealed >= 3) clearTimeout(safetyTimer); }
+    // Wrap reveals to track completion
+    ['.about-prompt', '.skills-title', '.footer-prompt'].forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) new IntersectionObserver(([e]) => { if (e.isIntersecting) checkAllRevealed(); }, { threshold: 0.1 }).observe(el);
     });
   })();
 
