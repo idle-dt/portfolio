@@ -776,14 +776,14 @@
     </div>
     <div class="project-role">Senior Mobile Engineer</div>
     <div class="project-skills">// Flutter · Dart · Riverpod · Freezed · Melos · Drift · React Native</div>
-    <p class="project-oneliner">Cross-platform app — decentralized social network + multi-chain crypto wallet</p>
+    <p class="project-oneliner">Cross-platform app — Nostr-based decentralized social network + multi-chain crypto wallet</p>
     <ul class="project-highlights">
-      <li>Built multi-chain wallet supporting 13+ blockchains and 10+ token standards</li>
-      <li>Delivered swap/bridge engine integrating 4 providers with automatic fallback</li>
-      <li>Designed chain-agnostic send/receive pipeline covering gas, validator, and memo models</li>
-      <li>Contributed across 30+ feature modules in a Riverpod + Freezed + Melos monorepo</li>
+      <li>Built multi-chain wallet covering EVM, Solana, Cosmos and UTXO families with a chain-agnostic send/receive pipeline handling gas, validator fees, memos, UTXO dust and SPL accounts</li>
+      <li>Delivered swap/bridge engine integrating 4 providers with quote aggregation, slippage control and automatic fallback</li>
+      <li>Local-first persistence on SQLite (Drift) for coins, transactions, NFTs and user data</li>
+      <li>Contributed across 30+ feature modules in a Riverpod + Freezed + Melos monorepo; delivered feed, stories, communities, search, comments and reactions on the Nostr-based relay</li>
       <li>Participated in Flutter-to-React Native migration and native app improvements</li>
-      <li>Led a sub-team of 3 inside a 14-person mobile group</li>
+      <li>Led a sub-team of 3 inside a 14-person mobile group; raised baseline code quality through static analysis and code-generation practices</li>
     </ul>
     <div class="project-links">
       <a href="https://ice.io/" target="_blank" rel="noopener">Website</a>
@@ -825,6 +825,7 @@
     <ul class="project-highlights">
       <li>Led MVVM → BLoC architecture migration with full documentation and incremental rollout plan</li>
       <li>Implemented live market data over WebSockets with reconnection and exponential backoff</li>
+      <li>Worked on wallet security and handling of user API credentials — minimizing attack surface and preventing unauthorized access</li>
       <li>Performance-tuned exchange layer for concurrent streams and order placement without UI blocking</li>
       <li>Maintained CI/CD pipelines in Codemagic for automated iOS and Android builds</li>
     </ul>
@@ -845,7 +846,7 @@
     <div class="project-skills">// Flutter · Dart · MVVM · Unity AR · Bitrise · Deep Links</div>
     <p class="project-oneliner">Portland craft brewery app — limited-release drops, AR mini-games, native integrations</p>
     <ul class="project-highlights">
-      <li>Designed app architecture from scratch; built the majority of features with pixel-perfect UI</li>
+      <li>Designed app architecture from scratch in MVVM; built the majority of features with pixel-perfect UI from Figma</li>
       <li>Integrated Unity AR mini-games into Flutter across the Flutter–Unity–native bridge</li>
       <li>Coordinated cross-team communication between Unity, mobile, backend, and product — ran demos and alignment calls</li>
       <li>Native integrations: push alerts for beer drops, deep links, home-screen widgets (iOS + Android)</li>
@@ -888,7 +889,8 @@
     <p class="project-oneliner">Early-stage studio — casual children's games and lightweight Android apps</p>
     <ul class="project-highlights">
       <li>Native Android with custom Canvas-based rendering for game loops and animations</li>
-      <li>Pixel-perfect UI in close collaboration with a 3-person design team</li>
+      <li>Worked inside a cross-functional team of 3 Android developers, 3 designers and 2 full-stack engineers, delivering a steady stream of small products under tight timelines</li>
+      <li>Pixel-perfect UI in close collaboration with the design team</li>
       <li>Short Unity stint on a children's platformer; steady stream of small products under tight timelines</li>
       <li>Fast iteration, tight collaboration, owning implementation end-to-end</li>
     </ul>
@@ -903,10 +905,12 @@
     <div class="project-skills">// Java · Android SDK · SQLite · Maps · REST API</div>
     <p class="project-oneliner">Medication aggregator — search, reserve, and order from pharmacy chains in one app</p>
     <ul class="project-highlights">
+      <li>Native Android app in Java (pre-Kotlin era) with a clean, accessible UI</li>
       <li>Solo mobile developer — joined an existing codebase and owned it forward</li>
       <li>Unified inconsistent responses from multiple pharmacy backends into a single data layer</li>
       <li>Local SQLite cache for medication data — offline-first, reduced network round-trips</li>
       <li>Pharmacy map with proximity calculation and routing to nearest stores</li>
+      <li>Background sync to refresh pharmacy inventories against multiple upstream servers</li>
     </ul>
   </section>
 
@@ -1001,6 +1005,10 @@
       <div class="education-item">
         <span class="education-item-title">Speaker — Kyiv Kotlin Night 2019</span>
         <span class="education-item-meta">Talk: Flutter fundamentals for Android devs</span>
+      </div>
+      <div class="education-item">
+        <span class="education-item-title">Speaker — 2020 & 2021</span>
+        <span class="education-item-meta">Talks on state management and app architecture</span>
       </div>
     </div>
   </section>
